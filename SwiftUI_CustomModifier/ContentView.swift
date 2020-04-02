@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height/10)
             }
-            self.modifier(AlertModifer(view:  AnyView(AlertChoiceView())))
+            self.modifier(AlertModifer(view:  AnyView(self.aa)))
         }
     }
 }
