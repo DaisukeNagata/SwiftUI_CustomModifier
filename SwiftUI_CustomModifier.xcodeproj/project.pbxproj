@@ -16,6 +16,10 @@
 		BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCD9243641DD00C21B7B /* TabModifier.swift */; };
 		BB60DCDC2436420F00C21B7B /* AlertChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */; };
 		BB60DCDE2436423400C21B7B /* AlertModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCDD2436423300C21B7B /* AlertModifer.swift */; };
+		BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3F224377FFA00EF7FB8 /* Extension+View.swift */; };
+		BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */; };
+		BB75A3F8243780B300EF7FB8 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3F7243780B300EF7FB8 /* Icon.swift */; };
+		BB75A3FB243780E600EF7FB8 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		BB60DCD9243641DD00C21B7B /* TabModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModifier.swift; sourceTree = "<group>"; };
 		BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertChoiceView.swift; sourceTree = "<group>"; };
 		BB60DCDD2436423300C21B7B /* AlertModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModifer.swift; sourceTree = "<group>"; };
+		BB75A3F224377FFA00EF7FB8 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		BB75A3F7243780B300EF7FB8 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,9 @@
 				BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */,
 				BB60DCC7243641C700C21B7B /* SceneDelegate.swift */,
 				BB60DCC9243641C700C21B7B /* ContentView.swift */,
+				BB75A3F9243780D900EF7FB8 /* UI */,
+				BB75A3F42437804D00EF7FB8 /* Model */,
+				BB75A3F124377FDF00EF7FB8 /* Extension */,
 				BB60DCDF2436425200C21B7B /* ViewModifier */,
 				BB60DCCB243641C800C21B7B /* Assets.xcassets */,
 				BB60DCD0243641C800C21B7B /* LaunchScreen.storyboard */,
@@ -90,6 +101,31 @@
 				BB60DCDD2436423300C21B7B /* AlertModifer.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		BB75A3F124377FDF00EF7FB8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BB75A3F224377FFA00EF7FB8 /* Extension+View.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BB75A3F42437804D00EF7FB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */,
+				BB75A3F7243780B300EF7FB8 /* Icon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB75A3F9243780D900EF7FB8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +201,14 @@
 			files = (
 				BB60DCC6243641C700C21B7B /* AppDelegate.swift in Sources */,
 				BB60DCC8243641C700C21B7B /* SceneDelegate.swift in Sources */,
+				BB75A3FB243780E600EF7FB8 /* RoundedCorner.swift in Sources */,
 				BB60DCDC2436420F00C21B7B /* AlertChoiceView.swift in Sources */,
+				BB75A3F8243780B300EF7FB8 /* Icon.swift in Sources */,
 				BB60DCDE2436423400C21B7B /* AlertModifer.swift in Sources */,
 				BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */,
+				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
+				BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
