@@ -16,13 +16,21 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Spacer()
-                if self.selection == 2 {
-                    Text("Hello, World!").onTapGesture {
-                        self.viewRouter.flg.toggle()
+                ZStack {
+                    self.modifier(NavigationModifier(view: AnyView(self),
+                                                     titleText: "Welcome",
+                                                     backgroundextColor: UIColor.green,
+                                                     titleTextTextColor: UIColor.red, // inline
+                        largeTitleTextColor: UIColor.blue, // large
+                        mode: .inline))
+                    
+                    if self.selection == 2 {
+                        Text("Hello, World!")
+                            .onTapGesture {
+                                self.viewRouter.flg.toggle()
+                        }
                     }
                 }
-                Spacer()
                 HStack {
                     self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))
                     self.modifier(TabModifier(selection:  self.$selection,viewRouter: self.viewRouter, tag: 2))

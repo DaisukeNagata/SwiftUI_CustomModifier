@@ -20,6 +20,7 @@
 		BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */; };
 		BB75A3F8243780B300EF7FB8 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3F7243780B300EF7FB8 /* Icon.swift */; };
 		BB75A3FB243780E600EF7FB8 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */; };
+		BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		BB75A3F7243780B300EF7FB8 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				BB60DCD9243641DD00C21B7B /* TabModifier.swift */,
 				BB60DCDD2436423300C21B7B /* AlertModifer.swift */,
+				BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				BB60DCDE2436423400C21B7B /* AlertModifer.swift in Sources */,
 				BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */,
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
+				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
 				BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */,
 			);
