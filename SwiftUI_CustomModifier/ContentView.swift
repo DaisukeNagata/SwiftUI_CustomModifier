@@ -21,8 +21,8 @@ struct ContentView: View {
                                                      titleText: "Welcome",
                                                      backgroundextColor: UIColor.green,
                                                      titleTextTextColor: UIColor.red, // inline
-                        largeTitleTextColor: UIColor.blue, // large
-                        mode: .inline))
+                                                     largeTitleTextColor: UIColor.blue, // large
+                                                     mode: .inline))
                     
                     if self.selection == 2 {
                         Text("Hello, World!")

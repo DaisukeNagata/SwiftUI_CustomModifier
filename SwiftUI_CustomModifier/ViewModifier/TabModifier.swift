@@ -22,7 +22,6 @@ struct TabModifier: ViewModifier {
     let selection: Binding<Int>
     var viewRouter: ViewRouter
     var tag: Int
-    var width = UIScreen.main.bounds.width
     
     func body(content: Content) -> some View {
         
@@ -30,15 +29,15 @@ struct TabModifier: ViewModifier {
             VStack {
                 if self.tag == 1 {
                     Divider()
-                        .frame(width: self.width, alignment: .bottom).offset(y: -8)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .top)
                 }
             }
             HStack {
                 Image(systemName: self.iconName())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .padding(20)
-                    .frame(width: geometry.size.width, height: self.width/4 - 20)
+                    .padding(geometry.size.width/5)
+                    .frame(width: geometry.size.width, height: geometry.size.width - 20)
                     .foregroundColor(self.fgColor())
                     .onTapGesture {
                         self.selection.wrappedValue = self.tag
