@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SegueView.swift */; };
 		BB60DCC6243641C700C21B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC5243641C700C21B7B /* AppDelegate.swift */; };
 		BB60DCC8243641C700C21B7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC7243641C700C21B7B /* SceneDelegate.swift */; };
 		BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC9243641C700C21B7B /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB2707EC243A9A2C00EA43D8 /* SegueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueView.swift; sourceTree = "<group>"; };
 		BB60DCC2243641C700C21B7B /* SwiftUI_CustomModifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_CustomModifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB60DCC5243641C700C21B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB60DCC7243641C700C21B7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */,
 				BB60DCC7243641C700C21B7B /* SceneDelegate.swift */,
 				BB60DCC9243641C700C21B7B /* ContentView.swift */,
+				BB2707EC243A9A2C00EA43D8 /* SegueView.swift */,
 				BB75A3F9243780D900EF7FB8 /* UI */,
 				BB75A3F42437804D00EF7FB8 /* Model */,
 				BB75A3F124377FDF00EF7FB8 /* Extension */,
@@ -212,6 +215,7 @@
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
 				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
+				BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */,
 				BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

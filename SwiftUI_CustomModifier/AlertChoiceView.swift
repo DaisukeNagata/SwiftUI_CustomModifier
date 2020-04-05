@@ -10,20 +10,14 @@ import SwiftUI
 
 struct AlertChoiceView: View {
 
-    @State private var offSet: CGFloat = UIScreen.main.bounds.height/2
     @State private var selection: Int = 1
-    @ObservedObject var viewRouter = ViewRouter()
+    @ObservedObject var viewRouter: ViewRouter
     @State private var edge: Edge = Edge.bottom
+    @State private var offSet: CGFloat = UIScreen.main.bounds.height/2
     
     // 画面の閉じる判定
     var body: some View {
         GeometryReader { geometry in
-            Text("CustomDialog").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .onTapGesture {
-                    withAnimation {
-                        self.viewRouter.flg.toggle()
-                    }
-            }
             ZStack {
                 if self.viewRouter.flg {
                     Color.gray
