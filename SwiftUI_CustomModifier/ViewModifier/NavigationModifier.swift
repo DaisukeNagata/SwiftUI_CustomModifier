@@ -25,9 +25,15 @@ struct NavigationModifier: ViewModifier {
         appearance.backgroundColor = backgroundextColor
         appearance.titleTextAttributes = [.foregroundColor: titleTextTextColor]
         appearance.largeTitleTextAttributes = [.foregroundColor: largeTitleTextColor]
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
+
+        if backgroundextColor == UIColor.clear {
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            UINavigationBar.appearance().shadowImage = UIImage()
+        } else {
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+
         return
             NavigationView {
                 VStack {

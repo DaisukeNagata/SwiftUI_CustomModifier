@@ -19,7 +19,7 @@ struct ContentView: View {
                 ZStack {
                     self.modifier(NavigationModifier(view: AnyView(self),
                                                      titleText: "Welcome",
-                                                     backgroundextColor: UIColor.green,
+                                                     backgroundextColor: UIColor.clear,
                                                      titleTextTextColor: UIColor.red, // inline
                                                      largeTitleTextColor: UIColor.blue, // large
                                                      viewRouter: self.viewRouter,
