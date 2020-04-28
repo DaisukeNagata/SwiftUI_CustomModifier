@@ -16,9 +16,10 @@ extension View {
                 lineWidth: CGFloat,
                 _ rectMove: CGPoint,
                 _ rectLine: CGPoint,
-                _ color: Color) -> some View {
+                _ color: Color,
+                _ texColor: Color? = nil) -> some View {
         ZStack {
-            Text(tex).frame(width: rectLine.x, height: rectLine.y)
+            Text(tex).frame(width: rectLine.x, height: rectLine.y).foregroundColor(texColor)
             Path { path in
                 path.move(to: rectMove)
                 path.addLine(to: rectLine)
