@@ -27,9 +27,9 @@ struct ContentView: View {
                     
                     if self.selection == 1 {
                         ZStack {
-                            self.border(CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 100), Color.black)
+                            self.border(lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 100), Color.black)
                                 .frame(width: 100, height: 100, alignment: .center)
-                            self.border(CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.yellow)
+                            self.border(lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.yellow)
                                 .frame(width: 100, height: 100, alignment: .center)
                             Text("border").frame(width: 100, height: 100, alignment: .center)
                         }
@@ -40,7 +40,7 @@ struct ContentView: View {
                     }
                 }
                 ZStack {
-                    self.border(CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.red)
+                    self.border(lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.red)
                         .frame(width: geometry.size.width, height: geometry.size.height/10).background(Color.clear)
                     HStack {
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))

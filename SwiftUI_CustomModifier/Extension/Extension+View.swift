@@ -12,7 +12,10 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
-    func border(_ rectMove: CGPoint, _ rectLine: CGPoint, _ color: Color) -> some View {
+    func border(lineWidth: CGFloat,
+                _ rectMove: CGPoint,
+                _ rectLine: CGPoint,
+                _ color: Color) -> some View {
         ZStack {
             Path { path in
                 path.move(to: rectMove)
@@ -20,7 +23,7 @@ extension View {
             }
             .stroke(color,
                     style: StrokeStyle(
-                        lineWidth: 2,
+                        lineWidth: lineWidth,
                         lineCap: .round,
                         lineJoin: .round,
                         miterLimit: 0,
