@@ -58,13 +58,13 @@ struct TabModifier: ViewModifier {
 
 extension View {
     
-    func boder(rectMove: CGRect, rectLine: CGRect) -> some View {
+    func boder(_ rectMove: CGPoint, _ rectLine: CGPoint, _ color: Color) -> some View {
         ZStack {
             Path { path in
-                path.move(to: CGPoint(x: rectMove.origin.x, y: rectMove.origin.y))
-                path.addLine(to: CGPoint(x: rectLine.origin.x, y: rectLine.origin.y))
+                path.move(to: rectMove)
+                path.addLine(to: rectLine)
             }
-            .stroke(Color.yellow,
+            .stroke(color,
                     style: StrokeStyle(
                         lineWidth: 2,
                         lineCap: .round,
