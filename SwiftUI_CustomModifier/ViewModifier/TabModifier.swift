@@ -54,26 +54,3 @@ struct TabModifier: ViewModifier {
         return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.heartView
     }
 }
-
-
-extension View {
-    
-    func boder(_ rectMove: CGPoint, _ rectLine: CGPoint, _ color: Color) -> some View {
-        ZStack {
-            Path { path in
-                path.move(to: rectMove)
-                path.addLine(to: rectLine)
-            }
-            .stroke(color,
-                    style: StrokeStyle(
-                        lineWidth: 2,
-                        lineCap: .round,
-                        lineJoin: .round,
-                        miterLimit: 0,
-                        dash: [],
-                        dashPhase: 0
-                )
-            )
-        }
-    }
-}
