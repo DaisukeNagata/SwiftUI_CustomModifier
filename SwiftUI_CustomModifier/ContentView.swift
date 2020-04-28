@@ -20,10 +20,11 @@ struct ContentView: View {
                     self.modifier(NavigationModifier(view: AnyView(self),
                                                      titleText: "Welcome",
                                                      backgroundextColor: UIColor.clear,
-                                                     titleTextTextColor: UIColor.red, // inline
-                                                     largeTitleTextColor: UIColor.blue, // large
+                                                     titleTextTextColor: UIColor.black, // inline
+                                                     largeTitleTextColor: UIColor.yellow, // large
                                                      viewRouter: self.viewRouter,
-                                                     mode: .large))
+                                                     mode: .inline))
+                    
                     if self.selection == 2 {
                         Text("Hello, World!")
                     }
@@ -34,9 +35,12 @@ struct ContentView: View {
                     self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 3))
                     self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 4))
                 }
+                .boder(rectMove: CGRect(x: 0, y: 0, width: 0, height: 1), rectLine: CGRect(x: geometry.size.width, y: 0, width: geometry.size.width, height: 1))
                 .frame(width: geometry.size.width, height: geometry.size.height/10)
+                .background(Color.black)
             }
             self.modifier(AlertModifer(view:  AnyView(AlertChoiceView(viewRouter: self.viewRouter))))
+            
         }
     }
 }

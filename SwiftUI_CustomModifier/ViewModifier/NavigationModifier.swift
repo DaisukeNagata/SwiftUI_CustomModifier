@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+enum BoderPos: String {
+    case top,left,right,bottom
+}
+
 struct NavigationModifier: ViewModifier {
     
     @State var tag : Int?
@@ -64,5 +68,11 @@ struct NavigationModifier: ViewModifier {
                     .navigationBarTitle("\(titleText)", displayMode: mode)
                 }
         }
+    }
+}
+
+struct NavigationModifier_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

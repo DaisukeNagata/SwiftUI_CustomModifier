@@ -8,8 +8,15 @@
 
 import SwiftUI
 
-struct TabModifier: ViewModifier {
+enum BorderPosition {
+    case top
+    case left
+    case right
+    case bottom
+}
 
+struct TabModifier: ViewModifier {
+    
     // セグメントデータコントロール
     let icon = [
         Icon(id: 0, name: ""),
@@ -24,14 +31,7 @@ struct TabModifier: ViewModifier {
     var tag: Int
     
     func body(content: Content) -> some View {
-        
-        return GeometryReader { geometry in
-            VStack {
-                if self.tag == 1 {
-                    Divider()
-                        .frame(width: UIScreen.main.bounds.width, alignment: .top)
-                }
-            }
+        GeometryReader { geometry in
             HStack {
                 Image(systemName: self.iconName())
                     .resizable()
@@ -52,5 +52,28 @@ struct TabModifier: ViewModifier {
     
     private func iconName() -> String {
         return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.heartView
+    }
+}
+
+
+extension View {
+    
+    func boder(rectMove: CGRect, rectLine: CGRect) -> some View {
+        ZStack {
+            Path { path in
+                path.move(to: CGPoint(x: rectMove.origin.x, y: rectMove.origin.y))
+                path.addLine(to: CGPoint(x: rectLine.origin.x, y: rectLine.origin.y))
+            }
+            .stroke(Color.yellow,
+                    style: StrokeStyle(
+                        lineWidth: 2,
+                        lineCap: .round,
+                        lineJoin: .round,
+                        miterLimit: 0,
+                        dash: [],
+                        dashPhase: 0
+                )
+            )
+        }
     }
 }
