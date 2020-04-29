@@ -8,10 +8,16 @@
 
 import SwiftUI
 
+enum Area {
+    case top, bottom, leading
+}
+
 extension View {
+
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
+
     func border(tex:String,
                 lineWidth: CGFloat,
                 _ rectMove: CGPoint,
@@ -34,6 +40,14 @@ extension View {
                         dashPhase: 0
                 )
             )
+        }
+    }
+
+    func allSafeArea(_ safeArea: GeometryProxy, _ area: Area) -> CGFloat? {
+        switch area {
+        case Area.top: return safeArea.safeAreaInsets.top
+        case Area.bottom: return safeArea.safeAreaInsets.bottom
+        case Area.leading: return safeArea.safeAreaInsets.leading
         }
     }
 }

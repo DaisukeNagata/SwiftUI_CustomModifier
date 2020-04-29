@@ -48,7 +48,10 @@ struct ContentView: View {
                 ZStack {
                     self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.blue)
                         .frame(width: geometry.size.width, height: geometry.size.height/10)
-                        .offset(y: -8) // Chek is Tap Height
+                        .background(Color.purple) // This is Top Color
+                        .offset(y: -(self.allSafeArea(geometry, .top) ?? CGFloat())) // Chek is Tap Height
+                        .background(Color.purple) // This is Bottom Color
+                        .offset(y: self.allSafeArea(geometry, .bottom) ?? CGFloat())
                     HStack {
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 2))
