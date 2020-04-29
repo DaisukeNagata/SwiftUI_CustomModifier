@@ -31,11 +31,11 @@ struct ContentView: View {
                         }) {
                             ZStack {
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 100), Color.yellow) // Left
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 100), Color.green) // Bottom
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 0), Color.black) // Diagonal
+                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 100), Color.orange) // Bottom
+                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 0), Color.yellow) // Diagonal
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 100), CGPoint(x: 0, y: 0), Color.orange) // Diagonal
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.yellow)// Right.
-                                self.border(tex: "border", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 100, y: 0), Color.blue, Color.black) // Top,  Color.black is Text
+                                self.border(tex: "border", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 100, y: 0), Color.orange, Color.black) // Top,  Color.black is Text
                             }
                             .frame(width: 100, height: 100, alignment: .center)
                         }
@@ -48,9 +48,9 @@ struct ContentView: View {
                 ZStack {
                     self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.blue)
                         .frame(width: geometry.size.width, height: geometry.size.height/10)
-                        .background(Color.purple) // This is Top Color
+                        .background(Color.yellow) // This is Top Color
                         .offset(y: -(self.allSafeArea(geometry, .top) ?? CGFloat())) // Chek is Tap Height
-                        .background(Color.purple) // This is Bottom Color
+                        .background(Color.orange) // This is Bottom Color
                         .offset(y: self.allSafeArea(geometry, .bottom) ?? CGFloat())
                     HStack {
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))

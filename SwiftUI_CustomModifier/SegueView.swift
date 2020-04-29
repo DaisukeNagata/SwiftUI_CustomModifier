@@ -12,6 +12,6 @@ struct SegueView: View {
     var body: some View {
         Text("SegueView")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.red)
+            .background(Color.green)
     }
 }
