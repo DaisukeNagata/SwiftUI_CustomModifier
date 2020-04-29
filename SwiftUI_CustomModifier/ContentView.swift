@@ -34,7 +34,7 @@ struct ContentView: View {
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 100), Color.green) // Bottom
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 0), Color.black) // Diagonal
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 100), CGPoint(x: 0, y: 0), Color.orange) // Diagonal
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.pink)// Right.
+                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.yellow)// Right.
                                 self.border(tex: "border", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 100, y: 0), Color.blue, Color.black) // Top,  Color.black is Text
                             }
                             .frame(width: 100, height: 100, alignment: .center)
