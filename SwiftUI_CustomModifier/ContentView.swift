@@ -19,7 +19,7 @@ struct ContentView: View {
                 ZStack {
                     self.modifier(NavigationModifier(view: AnyView(self),
                                                      titleText: "Welcome",
-                                                     backgroundextColor: UIColor.clear,
+                                                     backgroundextColor: UIColor.green,
                                                      titleTextTextColor: UIColor.black, // inline
                                                      largeTitleTextColor: UIColor.yellow, // large
                                                      viewRouter: self.viewRouter,
@@ -34,7 +34,7 @@ struct ContentView: View {
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 100), Color.green) // Bottom
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 0), Color.black) // Diagonal
                                 self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 100), CGPoint(x: 0, y: 0), Color.orange) // Diagonal
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.pink) // Right
+                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.pink)// Right.
                                 self.border(tex: "border", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 100, y: 0), Color.blue, Color.black) // Top,  Color.black is Text
                             }
                             .frame(width: 100, height: 100, alignment: .center)
@@ -46,8 +46,9 @@ struct ContentView: View {
                     }
                 }
                 ZStack {
-                    self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.red)
+                    self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.blue)
                         .frame(width: geometry.size.width, height: geometry.size.height/10)
+                        .offset(y: -8) // Chek is Tap Height
                     HStack {
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 2))
