@@ -8,13 +8,6 @@
 
 import SwiftUI
 
-enum BorderPosition {
-    case top
-    case left
-    case right
-    case bottom
-}
-
 struct TabModifier: ViewModifier {
     
     // セグメントデータコントロール

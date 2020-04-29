@@ -40,14 +40,14 @@ struct ContentView: View {
                             .frame(width: 100, height: 100, alignment: .center)
                         }
                     }
-    
+
                     if self.selection == 2 {
                         Text("Hello, World!")
                     }
                 }
                 ZStack {
                     self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.red)
-                        .frame(width: geometry.size.width, height: geometry.size.height/10).background(Color.clear)
+                        .frame(width: geometry.size.width, height: geometry.size.height/10)
                     HStack {
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))
                         self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 2))
@@ -58,7 +58,6 @@ struct ContentView: View {
                 }
             }
             self.modifier(AlertModifer(view:  AnyView(AlertChoiceView(viewRouter: self.viewRouter))))
-            
         }
     }
 }
