@@ -13,5 +13,5 @@ You can customize the action sheet.
  </p>
  
 <p align="center">
-<img src= "https://user-images.githubusercontent.com/16457165/80656570-746ce600-8abc-11ea-9082-4903b404583c.png" width="800" height="320">
+<img src= "https://user-images.githubusercontent.com/16457165/80831594-15c37b80-8c26-11ea-953d-7faab2cb98f8.png" width="800" height="320">
  </p>
