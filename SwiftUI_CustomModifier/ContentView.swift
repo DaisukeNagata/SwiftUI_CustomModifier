@@ -30,12 +30,36 @@ struct ContentView: View {
                             print("タップされました")
                         }) {
                             ZStack {
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 100), Color.yellow) // Left
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 100), Color.orange) // Bottom
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 100), CGPoint(x: 100, y: 0), Color.yellow) // Diagonal
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 100), CGPoint(x: 0, y: 0), Color.orange) // Diagonal
-                                self.border(tex: "", lineWidth: 2.0, CGPoint(x: 100, y: 0), CGPoint(x: 100, y: 100), Color.yellow)// Right.
-                                self.border(tex: "border", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: 100, y: 0), Color.orange, Color.black) // Top,  Color.black is Text
+                                self.border(tex: "",
+                                            lineWidth: 2.0,
+                                            CGPoint(x: 0, y: 0),
+                                            CGPoint(x: 0, y: 100),
+                                            Color.yellow)
+                                self.border(tex: "",
+                                            lineWidth: 2.0,
+                                            CGPoint(x: 0,   y: 100),
+                                            CGPoint(x: 100, y: 100),
+                                            Color.orange)
+                                self.border(tex: "",
+                                            lineWidth: 2.0,
+                                            CGPoint(x: 0,   y: 100),
+                                            CGPoint(x: 100, y: 0),
+                                            Color.yellow)
+                                self.border(tex: "",
+                                            lineWidth: 2.0,
+                                            CGPoint(x: 100, y: 100),
+                                            CGPoint(x: 0,   y: 0),
+                                            Color.orange)
+                                self.border(tex: "",
+                                            lineWidth: 2.0,
+                                            CGPoint(x: 100, y: 0),
+                                            CGPoint(x: 100, y: 100),
+                                            Color.yellow)
+                                self.border(tex      : "border",
+                                            lineWidth: 2.0,
+                                            CGPoint(x: 0,   y: 0),
+                                            CGPoint(x: 100, y: 0),
+                                            Color.orange, Color.black)
                             }
                             .frame(width: 100, height: 100, alignment: .center)
                         }
@@ -48,15 +72,35 @@ struct ContentView: View {
                 ZStack {
                     self.border(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.blue)
                         .frame(width: geometry.size.width, height: geometry.size.height/10)
-                        .background(Color.yellow) // This is Top Color
-                        .offset(y: -(self.allSafeArea(geometry, .top) ?? CGFloat())) // Chek is Tap Height
-                        .background(Color.orange) // This is Bottom Color
+                        .background(Color.yellow)
+                        .offset(y: -(self.allSafeArea(geometry, .top) ?? CGFloat()))
+                        .background(Color.orange)
                         .offset(y: self.allSafeArea(geometry, .bottom) ?? CGFloat())
                     HStack {
-                        self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 1))
-                        self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 2))
-                        self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 3))
-                        self.modifier(TabModifier(selection:  self.$selection, viewRouter: self.viewRouter, tag: 4))
+                        self.tabBorder(modi: TabModifier(selection:  self.$selection,
+                                                         viewRouter: self.viewRouter, tag: 1),
+                                       lineWidth: 1,
+                                       CGPoint(x: geometry.size.width/4, y: self.safeArea(geometry) ? -10 : -20),
+                                       CGPoint(x: geometry.size.width/4, y: geometry.size.height/10+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
+                                       Color.blue)
+                        self.tabBorder(modi: TabModifier(selection:  self.$selection,
+                                                         viewRouter: self.viewRouter, tag: 2),
+                                       lineWidth: 1,
+                                       CGPoint(x: geometry.size.width/4, y:  self.safeArea(geometry) ? -10 : -20),
+                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/(self.safeArea(geometry) ? 11 : 10)+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
+                                       Color.blue)
+                        self.tabBorder(modi: TabModifier(selection:  self.$selection,
+                                                         viewRouter: self.viewRouter, tag: 3),
+                                       lineWidth: 1,
+                                       CGPoint(x: geometry.size.width/4, y:  self.safeArea(geometry) ? -10 : -20),
+                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/10+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
+                                       Color.blue)
+                        self.tabBorder(modi: TabModifier(selection: self.$selection,
+                                                         viewRouter: self.viewRouter, tag: 4),
+                                       lineWidth: 1,
+                                       CGPoint(x: geometry.size.width/4, y: 0),
+                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/10+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
+                                       Color.blue)
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height/10)
                 }
