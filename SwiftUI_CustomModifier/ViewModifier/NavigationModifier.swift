@@ -13,7 +13,7 @@ enum BoderPos: String {
 }
 
 struct NavigationModifier: ViewModifier {
-    
+
     @State var tag : Int?
     @State var view: AnyView
     @State var titleText  : String
@@ -22,9 +22,9 @@ struct NavigationModifier: ViewModifier {
     @State var largeTitleTextColor: UIColor
     @ObservedObject var viewRouter: ViewRouter
     @State var mode: NavigationBarItem.TitleDisplayMode
-    
+
     func body(content: Content) -> some View {
-        
+
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = backgroundextColor
         appearance.titleTextAttributes = [.foregroundColor: titleTextTextColor]
