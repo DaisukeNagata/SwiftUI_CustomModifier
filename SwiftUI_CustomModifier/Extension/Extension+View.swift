@@ -17,6 +17,31 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
+    
+    func naviBoarder(modi: NavigationModifier,
+                lineWidth: CGFloat,
+                _ rectMove: CGPoint,
+                _ rectLine: CGPoint,
+                _ color: Color,
+                _ texColor: Color? = nil) -> some View {
+        ZStack {
+            self.modifier(modi)
+            Path { path in
+                path.move(to: rectMove)
+                path.addLine(to: rectLine)
+            }
+            .stroke(color,
+                    style: StrokeStyle(
+                        lineWidth: lineWidth,
+                        lineCap: .round,
+                        lineJoin: .round,
+                        miterLimit: 0,
+                        dash: [],
+                        dashPhase: 0
+                )
+            )
+        }
+    }
 
     func tabBoarder(modi: TabModifier,
                 lineWidth: CGFloat,

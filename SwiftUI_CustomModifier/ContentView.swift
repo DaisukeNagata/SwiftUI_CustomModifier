@@ -17,13 +17,22 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack {
                 ZStack {
-                    self.modifier(NavigationModifier(view: AnyView(self),
-                                                     titleText: "Welcome",
-                                                     backgroundextColor: UIColor.green,
-                                                     titleTextTextColor: UIColor.black, // inline
-                                                     largeTitleTextColor: UIColor.yellow, // large
-                                                     viewRouter: self.viewRouter,
-                                                     mode: .inline))
+
+                    self.naviBoarder(modi:
+                        NavigationModifier(view: AnyView(self),
+                                                              titleText: "Welcome",
+                                                              backgroundextColor: UIColor.green,
+                                                              titleTextTextColor: UIColor.black, // inline
+                                                              largeTitleTextColor: UIColor.yellow, // large
+                                                              viewRouter: self.viewRouter),
+                                                              lineWidth: 2,
+                                                              CGPoint(x: 0, y: self.viewRouter.mode == .inline ? 44 : 95),
+                                                              CGPoint(x: geometry.size.width, y: self.viewRouter.mode == .inline ? 44 : 95),
+                                                              Color.purple)
+                        .onAppear {
+                            self.viewRouter.mode = .large
+                    }
+                        
                     
                     if self.selection == 1 {
                         Button(action: {

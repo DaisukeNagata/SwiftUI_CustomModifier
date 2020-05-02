@@ -21,10 +21,8 @@ struct NavigationModifier: ViewModifier {
     @State var titleTextTextColor : UIColor
     @State var largeTitleTextColor: UIColor
     @ObservedObject var viewRouter: ViewRouter
-    @State var mode: NavigationBarItem.TitleDisplayMode
 
     func body(content: Content) -> some View {
-
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = backgroundextColor
         appearance.titleTextAttributes = [.foregroundColor: titleTextTextColor]
@@ -65,7 +63,7 @@ struct NavigationModifier: ViewModifier {
                     NavigationLink(destination: AnyView(SegueView()), tag: self.tag ?? 0, selection: $tag) {
                         EmptyView()
                     }
-                    .navigationBarTitle("\(titleText)", displayMode: mode)
+                    .navigationBarTitle("\(titleText)", displayMode: viewRouter.mode)
                 }
         }
     }
