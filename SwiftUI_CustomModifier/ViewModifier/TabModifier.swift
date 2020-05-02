@@ -31,19 +31,21 @@ struct TabModifier: ViewModifier {
                     .aspectRatio(contentMode: .fit)
                     .padding(geometry.size.width/5)
                     .frame(width: geometry.size.width, height: geometry.size.width - 20)
+                    .offset(y: self.offsetY(geo: geometry))
                     .foregroundColor(self.fgColor())
                     .onTapGesture {
                         self.selection.wrappedValue = self.tag
+                        self.viewRouter.offsetflg.toggle()
                 }
             }
         }
     }
 
-    private func fgColor() -> Color {
-        return selection.wrappedValue == self.tag ? Color(UIColor.systemBlue) : Color(UIColor.systemGray)
-    }
-    
-    private func iconName() -> String {
-        return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.heartView
+    private func fgColor() -> Color { return selection.wrappedValue == self.tag ? Color(UIColor.systemBlue) : Color(UIColor.systemGray) }
+
+    private func iconName() -> String { return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.heartView }
+
+    private func offsetY(geo: GeometryProxy) -> CGFloat { if viewRouter.offsetflg { return selection.wrappedValue == self.tag ? -geo.size.height : 0 }
+        return 0
     }
 }
