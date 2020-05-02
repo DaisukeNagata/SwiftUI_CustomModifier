@@ -11,4 +11,5 @@ import SwiftUI
 class ViewRouter: ObservableObject {
     @Published var heartView = "heart.fill"
     @Published var flg = false
+    @Published var offsetFlg = false
 }
