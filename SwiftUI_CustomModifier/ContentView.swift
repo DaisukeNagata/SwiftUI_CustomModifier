@@ -87,7 +87,7 @@ struct ContentView: View {
                                                          viewRouter: self.viewRouter, tag: 2),
                                        lineWidth: 1,
                                        CGPoint(x: geometry.size.width/4, y:  self.safeArea(geometry) ? -10 : -20),
-                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/(self.safeArea(geometry) ? 11 : 10)+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
+                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/(self.safeArea(geometry) ? 12 : 10)+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
                                        Color.blue)
                         self.tabBorder(modi: TabModifier(selection:  self.$selection,
                                                          viewRouter: self.viewRouter, tag: 3),
