@@ -18,7 +18,7 @@ extension View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
 
-    func tabBorder(modi: TabModifier,
+    func tabBoarder(modi: TabModifier,
                 lineWidth: CGFloat,
                 _ rectMove: CGPoint,
                 _ rectLine: CGPoint,
@@ -43,7 +43,7 @@ extension View {
         }
     }
 
-    func border(tex:String,
+    func boarder(tex:String,
                 lineWidth: CGFloat,
                 _ rectMove: CGPoint,
                 _ rectLine: CGPoint,
