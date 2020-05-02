@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SegueView.swift */; };
+		BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */; };
 		BB60DCC6243641C700C21B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC5243641C700C21B7B /* AppDelegate.swift */; };
 		BB60DCC8243641C700C21B7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC7243641C700C21B7B /* SceneDelegate.swift */; };
 		BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC9243641C700C21B7B /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		BB2707EC243A9A2C00EA43D8 /* SegueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueView.swift; sourceTree = "<group>"; };
+		BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
 		BB60DCC2243641C700C21B7B /* SwiftUI_CustomModifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_CustomModifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB60DCC5243641C700C21B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB60DCC7243641C700C21B7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				BB75A3F224377FFA00EF7FB8 /* Extension+View.swift */,
+				BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				BB75A3F8243780B300EF7FB8 /* Icon.swift in Sources */,
 				BB60DCDE2436423400C21B7B /* AlertModifer.swift in Sources */,
 				BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */,
+				BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */,
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
 				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,

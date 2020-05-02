@@ -26,8 +26,8 @@ struct ContentView: View {
                                                               largeTitleTextColor: UIColor.yellow, // large
                                                               viewRouter: self.viewRouter),
                                                               lineWidth: 2,
-                                                              CGPoint(x: 0, y: self.viewRouter.mode == .inline ? 44 : 95),
-                                                              CGPoint(x: geometry.size.width, y: self.viewRouter.mode == .inline ? 44 : 95),
+                                                              CGPoint(x: 0, y: self.viewRouter.mode == .inline ? 44 : CGFloat().seCheck() ? 92 : 95),
+                                                              CGPoint(x: geometry.size.width, y: self.viewRouter.mode == .inline ? 44 : CGFloat().seCheck() ? 92 : 95),
                                                               Color.purple)
                         .onAppear {
                             self.viewRouter.mode = .large
