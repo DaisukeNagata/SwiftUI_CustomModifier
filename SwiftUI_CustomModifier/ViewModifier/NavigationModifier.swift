@@ -8,10 +8,6 @@
 
 import SwiftUI
 
-enum BoderPos: String {
-    case top,left,right,bottom
-}
-
 struct NavigationModifier: ViewModifier {
 
     @State private var scrollViewContentOffset = CGFloat(0)
