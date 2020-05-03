@@ -35,7 +35,7 @@ struct TabModifier: ViewModifier {
                     .foregroundColor(self.fgColor())
                     .onTapGesture {
                         self.selection.wrappedValue = self.tag
-                        self.viewRouter.offsetFlg.toggle()
+                        self.viewRouter.designModel.offsetFlg.toggle()
                 }
             }
         }
@@ -43,9 +43,9 @@ struct TabModifier: ViewModifier {
 
     private func fgColor() -> Color { return selection.wrappedValue == self.tag ? Color(UIColor.systemBlue) : Color(UIColor.systemGray) }
 
-    private func iconName() -> String { return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.heartView }
+    private func iconName() -> String { return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.designModel.heartView }
 
-    private func offsetY(geo: GeometryProxy) -> CGFloat { if viewRouter.offsetFlg { return selection.wrappedValue == self.tag ? -geo.size.height : 0 }
+    private func offsetY(geo: GeometryProxy) -> CGFloat { if viewRouter.designModel.offsetFlg { return selection.wrappedValue == self.tag ? -geo.size.height : 0 }
         return 0
     }
 }

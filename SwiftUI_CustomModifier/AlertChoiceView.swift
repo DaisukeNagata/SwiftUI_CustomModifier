@@ -19,7 +19,7 @@ struct AlertChoiceView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                if self.viewRouter.flg {
+                if self.viewRouter.designModel.flg {
                     Color.gray
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .onTapGesture {
@@ -54,7 +54,7 @@ struct AlertChoiceView: View {
         }
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
             self.offSet = UIScreen.main.bounds.height/2
-            self.viewRouter.flg.toggle()
+            self.viewRouter.designModel.flg.toggle()
         }
     }
 }

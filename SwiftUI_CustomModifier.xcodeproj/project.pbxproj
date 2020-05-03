@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SegueView.swift */; };
+		BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */; };
 		BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */; };
+		BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0516245E1E0900D9C696 /* Spinner.swift */; };
+		BB5C051A245E1E4C00D9C696 /* ScrollViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0519245E1E4C00D9C696 /* ScrollViews.swift */; };
+		BB5C051D245E1F0800D9C696 /* TimeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C051C245E1F0800D9C696 /* TimeLogic.swift */; };
+		BB5C0520245E1F9400D9C696 /* RefreshModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C051F245E1F9400D9C696 /* RefreshModel.swift */; };
+		BB5C0522245E20B000D9C696 /* NaviModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0521245E20B000D9C696 /* NaviModel.swift */; };
+		BB5C0524245E215E00D9C696 /* DesignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0523245E215E00D9C696 /* DesignModel.swift */; };
 		BB60DCC6243641C700C21B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC5243641C700C21B7B /* AppDelegate.swift */; };
 		BB60DCC8243641C700C21B7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC7243641C700C21B7B /* SceneDelegate.swift */; };
 		BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB60DCC9243641C700C21B7B /* ContentView.swift */; };
@@ -27,7 +34,14 @@
 
 /* Begin PBXFileReference section */
 		BB2707EC243A9A2C00EA43D8 /* SegueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueView.swift; sourceTree = "<group>"; };
+		BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
+		BB5C0516245E1E0900D9C696 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		BB5C0519245E1E4C00D9C696 /* ScrollViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViews.swift; sourceTree = "<group>"; };
+		BB5C051C245E1F0800D9C696 /* TimeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogic.swift; sourceTree = "<group>"; };
+		BB5C051F245E1F9400D9C696 /* RefreshModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshModel.swift; sourceTree = "<group>"; };
+		BB5C0521245E20B000D9C696 /* NaviModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviModel.swift; sourceTree = "<group>"; };
+		BB5C0523245E215E00D9C696 /* DesignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignModel.swift; sourceTree = "<group>"; };
 		BB60DCC2243641C700C21B7B /* SwiftUI_CustomModifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_CustomModifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB60DCC5243641C700C21B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB60DCC7243641C700C21B7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +71,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB5C0518245E1E2800D9C696 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB60DCC9243641C700C21B7B /* ContentView.swift */,
+				BB2707EC243A9A2C00EA43D8 /* SegueView.swift */,
+				BB5C0519245E1E4C00D9C696 /* ScrollViews.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB5C051B245E1EFA00D9C696 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB5C051C245E1F0800D9C696 /* TimeLogic.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BB5C051E245E1F6E00D9C696 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BB60DCB9243641C700C21B7B = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +119,13 @@
 				BB60DCC5243641C700C21B7B /* AppDelegate.swift */,
 				BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */,
 				BB60DCC7243641C700C21B7B /* SceneDelegate.swift */,
-				BB60DCC9243641C700C21B7B /* ContentView.swift */,
-				BB2707EC243A9A2C00EA43D8 /* SegueView.swift */,
-				BB75A3F9243780D900EF7FB8 /* UI */,
+				BB5C051B245E1EFA00D9C696 /* Protocol */,
+				BB5C051E245E1F6E00D9C696 /* ViewModel */,
 				BB75A3F42437804D00EF7FB8 /* Model */,
-				BB75A3F124377FDF00EF7FB8 /* Extension */,
+				BB5C0518245E1E2800D9C696 /* View */,
+				BB75A3F9243780D900EF7FB8 /* UI */,
 				BB60DCDF2436425200C21B7B /* ViewModifier */,
+				BB75A3F124377FDF00EF7FB8 /* Extension */,
 				BB60DCCB243641C800C21B7B /* Assets.xcassets */,
 				BB60DCD0243641C800C21B7B /* LaunchScreen.storyboard */,
 				BB60DCD3243641C800C21B7B /* Info.plist */,
@@ -123,8 +164,11 @@
 		BB75A3F42437804D00EF7FB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BB75A3F52437805F00EF7FB8 /* ViewRouter.swift */,
 				BB75A3F7243780B300EF7FB8 /* Icon.swift */,
+				BB5C0521245E20B000D9C696 /* NaviModel.swift */,
+				BB5C051F245E1F9400D9C696 /* RefreshModel.swift */,
+				BB5C0523245E215E00D9C696 /* DesignModel.swift */,
+				BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */,
+				BB5C0516245E1E0900D9C696 /* Spinner.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -209,14 +254,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB60DCC6243641C700C21B7B /* AppDelegate.swift in Sources */,
+				BB5C0522245E20B000D9C696 /* NaviModel.swift in Sources */,
 				BB60DCC8243641C700C21B7B /* SceneDelegate.swift in Sources */,
 				BB75A3FB243780E600EF7FB8 /* RoundedCorner.swift in Sources */,
 				BB60DCDC2436420F00C21B7B /* AlertChoiceView.swift in Sources */,
 				BB75A3F8243780B300EF7FB8 /* Icon.swift in Sources */,
 				BB60DCDE2436423400C21B7B /* AlertModifer.swift in Sources */,
 				BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */,
+				BB5C051D245E1F0800D9C696 /* TimeLogic.swift in Sources */,
+				BB5C0520245E1F9400D9C696 /* RefreshModel.swift in Sources */,
 				BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */,
+				BB5C0524245E215E00D9C696 /* DesignModel.swift in Sources */,
+				BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */,
+				BB5C051A245E1E4C00D9C696 /* ScrollViews.swift in Sources */,
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
+				BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */,
 				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
 				BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */,

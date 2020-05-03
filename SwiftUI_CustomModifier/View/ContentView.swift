@@ -26,15 +26,14 @@ struct ContentView: View {
                                                               largeTitleTextColor: UIColor.yellow, // large
                                                               viewRouter: self.viewRouter),
                                                               lineWidth: 2,
-                                                              CGPoint(x: 0, y: self.viewRouter.mode == .inline ? 44 : CGFloat().seCheck() ? 92 : 95),
-                                                              CGPoint(x: geometry.size.width, y: self.viewRouter.mode == .inline ? 44 : CGFloat().seCheck() ? 92 : 95),
+                                                              CGPoint(x: 0, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                                              CGPoint(x: geometry.size.width, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
                                                               Color.purple)
                         .onAppear {
-                            self.viewRouter.mode = .large
+                            self.viewRouter.naviModel.mode = .inline
                     }
-                        
-                    
-                    if self.selection == 1 {
+
+                    if self.selection == 2 {
                         Button(action: {
                             print("タップされました")
                         }) {
@@ -54,10 +53,11 @@ struct ContentView: View {
                         }
                     }
 
-                    if self.selection == 2 {
+                    if self.selection == 3 {
                         Text("Hello, World!")
                     }
                 }
+
                 ZStack {
                     self.boarder(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.blue)
                         .frame(width: geometry.size.width, height: geometry.size.height/10)

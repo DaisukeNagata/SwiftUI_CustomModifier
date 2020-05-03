@@ -14,6 +14,7 @@ enum BoderPos: String {
 
 struct NavigationModifier: ViewModifier {
 
+    @State private var scrollViewContentOffset = CGFloat(0)
     @State var tag : Int?
     @State var view: AnyView
     @State var titleText  : String
@@ -43,7 +44,7 @@ struct NavigationModifier: ViewModifier {
                         .navigationBarItems(leading:
                             Button(action: {
                                 withAnimation {
-                                    self.viewRouter.flg.toggle()
+                                    self.viewRouter.designModel.flg.toggle()
                                 }
                             }) {
                                 Image(systemName: "person.crop.circle")
@@ -60,10 +61,13 @@ struct NavigationModifier: ViewModifier {
                                     .renderingMode(.original)
                                     .frame(width: 32.0, height: 32.0)
                         })
-                    NavigationLink(destination: AnyView(SegueView()), tag: self.tag ?? 0, selection: $tag) {
+                    NavigationLink(destination: AnyView(SegueView( viewRouter: self.viewRouter, contentOffset: $scrollViewContentOffset,action: { flg in
+                        self.viewRouter.reModel.spinner.isAnimating = flg
+                        })
+                    ), tag: self.tag ?? 0, selection: $tag) {
                         EmptyView()
                     }
-                    .navigationBarTitle("\(titleText)", displayMode: viewRouter.mode)
+                    .navigationBarTitle("\(titleText)", displayMode: viewRouter.naviModel.mode)
                 }
         }
     }
