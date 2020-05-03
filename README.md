@@ -7,6 +7,8 @@ You can easily change the color and size of Navigation and Tab.
 You can also customize the border of the View.
 
 You can customize the action sheet.
+
+You can Pull To Refresh.
 ```
 
 <p align="center">
