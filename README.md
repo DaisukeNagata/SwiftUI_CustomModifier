@@ -8,6 +8,11 @@ You can also customize the border of the View.
 
 You can customize the action sheet.
 ```
+
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/16457165/80899041-21a65f00-8d46-11ea-8a78-eede9657eed1.gif" width="320" height="700">
+ </p>
+ 
 <p align="center">
 <img src= "https://user-images.githubusercontent.com/16457165/78512300-4a3a4800-77de-11ea-9df2-eaf56da0c67d.gif" width="800" height="500">
  </p>
