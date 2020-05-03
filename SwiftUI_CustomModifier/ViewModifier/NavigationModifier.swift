@@ -17,19 +17,15 @@ struct NavigationModifier: ViewModifier {
     @State private var scrollViewContentOffset = CGFloat(0)
     @State var tag : Int?
     @State var view: AnyView
-    @State var titleText  : String
-    @State var backgroundextColor : UIColor
-    @State var titleTextTextColor : UIColor
-    @State var largeTitleTextColor: UIColor
     @ObservedObject var viewRouter: ViewRouter
 
     func body(content: Content) -> some View {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = backgroundextColor
-        appearance.titleTextAttributes = [.foregroundColor: titleTextTextColor]
-        appearance.largeTitleTextAttributes = [.foregroundColor: largeTitleTextColor]
+        appearance.backgroundColor = viewRouter.designModel.backgroundextColor
+        appearance.titleTextAttributes = [.foregroundColor: viewRouter.designModel.titleTextTextColor]
+        appearance.largeTitleTextAttributes = [.foregroundColor: viewRouter.designModel.largeTitleTextColor]
 
-        if backgroundextColor == UIColor.clear {
+        if viewRouter.designModel.backgroundextColor == UIColor.clear {
             UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
             UINavigationBar.appearance().shadowImage = UIImage()
         } else {
@@ -67,7 +63,7 @@ struct NavigationModifier: ViewModifier {
                     ), tag: self.tag ?? 0, selection: $tag) {
                         EmptyView()
                     }
-                    .navigationBarTitle("\(titleText)", displayMode: viewRouter.naviModel.mode)
+                    .navigationBarTitle("\(self.viewRouter.designModel.titleText)", displayMode: viewRouter.naviModel.mode)
                 }
         }
     }

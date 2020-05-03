@@ -13,5 +13,10 @@ struct DesignModel: Identifiable {
     var flg: Bool
     var offsetFlg: Bool
     var offset: CGFloat
+    var lineWidth: CGFloat
     var heartView = "heart.fill"
+    var titleText  : String
+    var backgroundextColor: UIColor
+    var titleTextTextColor: UIColor
+    var largeTitleTextColor: UIColor
 }

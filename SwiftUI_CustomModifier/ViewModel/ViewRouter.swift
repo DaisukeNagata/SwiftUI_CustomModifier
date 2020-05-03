@@ -10,7 +10,16 @@ import SwiftUI
 
 class ViewRouter: ObservableObject, TimeLogic {
 
-    @Published var designModel = DesignModel(id: 0, flg: false, offsetFlg: false, offset: 0,  heartView: "heart.fill")
+    @Published var designModel = DesignModel(id: 0,
+                                             flg: false,
+                                             offsetFlg: false,
+                                             offset: 0,
+                                             lineWidth: 0,
+                                             heartView: "heart.fill",
+                                             titleText: "",
+                                             backgroundextColor: UIColor.white,
+                                             titleTextTextColor: UIColor.white,
+                                             largeTitleTextColor: UIColor.white)
     @Published var reModel = RefreshModel(id: 0)
     @Published var naviModel = NaviModel(id: 0)
 

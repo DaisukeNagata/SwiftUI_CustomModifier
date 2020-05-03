@@ -13,6 +13,19 @@ struct ContentView: View {
     @State private var selection: Int = 1
     @ObservedObject var viewRouter = ViewRouter()
 
+    init() {
+        viewRouter.designModel = DesignModel(id: 0,
+                                             flg: false,
+                                             offsetFlg: false,
+                                             offset: 0,
+                                             lineWidth: 0,
+                                             heartView: "heart.fill",
+                                             titleText: "Welcome",
+                                             backgroundextColor: UIColor.green,
+                                             titleTextTextColor: UIColor.yellow,
+                                             largeTitleTextColor: UIColor.black)
+    }
+
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -20,15 +33,11 @@ struct ContentView: View {
 
                     self.naviBoarder(modi:
                         NavigationModifier(view: AnyView(self),
-                                                              titleText: "Welcome",
-                                                              backgroundextColor: UIColor.green,
-                                                              titleTextTextColor: UIColor.black, // inline
-                                                              largeTitleTextColor: UIColor.yellow, // large
-                                                              viewRouter: self.viewRouter),
-                                                              lineWidth: 2,
-                                                              CGPoint(x: 0, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
-                                                              CGPoint(x: geometry.size.width, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
-                                                              Color.purple)
+                                           viewRouter: self.viewRouter),
+                                     lineWidth: 2,
+                                     CGPoint(x: 0, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                     CGPoint(x: geometry.size.width, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                     Color.purple)
                         .onAppear {
                             self.viewRouter.naviModel.mode = .inline
                     }
