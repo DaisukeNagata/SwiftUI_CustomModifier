@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SegueView: View {
+struct SCView: View {
     
     var action: (_ index: Bool) -> Void
 
@@ -33,7 +33,7 @@ struct SegueView: View {
                         .frame(height: self.heightOffset)
                         .offset(y: -self.viewRouter.designModel.offset == 0 ? self.heightOffset/2 : 0)
                     GeometryReader { insideProxy in
-                        ScrollViews(desDsign: self.texIndex)
+                        TextViews(desDsign: self.texIndex)
                             .background(Color.green)
                             .preference(key: ScrollOffsetPreferenceKey.self, value: [self.calculateContentOffset(fromOutsideProxy: geometry, insideProxy: insideProxy)])
                             .offset(y: self.viewRouter.designModel.offset == 0 ? -self.heightOffset : 0)
@@ -46,7 +46,7 @@ struct SegueView: View {
                 value.translation.height > 0 ? self.action(true) : self.action(false)
                 self.viewRouter.designModel.offset = value.translation.height > 0 ? 1 : 0
             }))
-                .onPreferenceChange(ScrollOffsetPreferenceKey.self) { v in
+                .onPreferenceChange(ScrollOffsetPreferenceKey.self) { _ in
                     self.viewRouter.setupProcessingTimr(3.0, action: self.action)
             }
 

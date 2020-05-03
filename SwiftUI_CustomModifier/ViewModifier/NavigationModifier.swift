@@ -53,7 +53,7 @@ struct NavigationModifier: ViewModifier {
                                     .renderingMode(.original)
                                     .frame(width: 32.0, height: 32.0)
                         })
-                    NavigationLink(destination: AnyView(SegueView( viewRouter: self.viewRouter, contentOffset: $scrollViewContentOffset,action: { flg in
+                    NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, contentOffset: $scrollViewContentOffset,action: { flg in
                         self.viewRouter.reModel.spinner.isAnimating = flg
                         })
                     ), tag: self.tag ?? 0, selection: $tag) {

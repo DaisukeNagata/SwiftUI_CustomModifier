@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ScrollViews: View {
+struct TextViews: View {
    @State var desDsign: [Text]
     var body: some View {
         VStack {

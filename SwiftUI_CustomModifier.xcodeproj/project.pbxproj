@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SegueView.swift */; };
+		BB2707ED243A9A2C00EA43D8 /* SCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SCView.swift */; };
 		BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */; };
 		BB51EE20245EBEE800F28D0C /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE1F245EBEE800F28D0C /* AlertModel.swift */; };
 		BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */; };
@@ -34,7 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB2707EC243A9A2C00EA43D8 /* SegueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueView.swift; sourceTree = "<group>"; };
+		BB2707EC243A9A2C00EA43D8 /* SCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCView.swift; sourceTree = "<group>"; };
 		BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		BB51EE1F245EBEE800F28D0C /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			children = (
 				BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */,
 				BB60DCC9243641C700C21B7B /* ContentView.swift */,
-				BB2707EC243A9A2C00EA43D8 /* SegueView.swift */,
+				BB2707EC243A9A2C00EA43D8 /* SCView.swift */,
 				BB5C0519245E1E4C00D9C696 /* ScrollViews.swift */,
 			);
 			path = View;
@@ -275,7 +275,7 @@
 				BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */,
 				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
-				BB2707ED243A9A2C00EA43D8 /* SegueView.swift in Sources */,
+				BB2707ED243A9A2C00EA43D8 /* SCView.swift in Sources */,
 				BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
