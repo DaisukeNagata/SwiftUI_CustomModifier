@@ -12,9 +12,7 @@ struct AlertChoiceView: View {
 
     @State private var selection: Int = 1
     @ObservedObject var viewRouter: ViewRouter
-    @State private var edge: Edge = Edge.bottom
-    @State private var offSet: CGFloat = UIScreen.main.bounds.height/2
-    
+
     // 画面の閉じる判定
     var body: some View {
         GeometryReader { geometry in
@@ -31,7 +29,7 @@ struct AlertChoiceView: View {
                     .edgesIgnoringSafeArea(.all)
                     
                     Color.white
-                        .transition(.move(edge: self.edge))
+                        .transition(.move(edge: self.viewRouter.alertModel.edge))
                         .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                         .cornerRadius(15, corners: [.topLeft, .topRight])
                         .onTapGesture {
@@ -39,21 +37,21 @@ struct AlertChoiceView: View {
                     }
                     .gesture(DragGesture()
                     .onChanged({ value in
-                        self.offSet = (value.translation.height*0.1) + self.offSet
+                        self.viewRouter.alertModel.offSet = (value.translation.height*0.1) + self.viewRouter.alertModel.offSet
                     })
                     )
-                        .offset(y: self.offSet)
+                        .offset(y: self.viewRouter.alertModel.offSet)
                 }
             }
         }
     }
-    
+
     func closeAnimation(_ geo: GeometryProxy) {
         withAnimation(.easeInOut(duration: 0.5)) {
-            self.offSet = UIScreen.main.bounds.height
+            self.viewRouter.alertModel.offSet = UIScreen.main.bounds.height
         }
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
-            self.offSet = UIScreen.main.bounds.height/2
+            self.viewRouter.alertModel.offSet = UIScreen.main.bounds.height/2
             self.viewRouter.designModel.flg.toggle()
         }
     }

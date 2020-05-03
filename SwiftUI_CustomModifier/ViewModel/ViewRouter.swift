@@ -10,6 +10,9 @@ import SwiftUI
 
 class ViewRouter: ObservableObject, TimeLogic {
 
+    @Published var alertModel = AlertModel(id:0,
+                                           edge: Edge.bottom,
+                                           offSet: UIScreen.main.bounds.height/2)
     @Published var designModel = DesignModel(id: 0,
                                              flg: false,
                                              offsetFlg: false,
