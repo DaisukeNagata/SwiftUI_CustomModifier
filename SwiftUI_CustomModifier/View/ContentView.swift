@@ -34,10 +34,10 @@ struct ContentView: View {
                     self.naviBoarder(modi:
                         NavigationModifier(view: AnyView(self),
                                            viewRouter: self.viewRouter),
-                                     lineWidth: 2,
-                                     CGPoint(x: 0, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
-                                     CGPoint(x: geometry.size.width, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
-                                     Color.purple)
+                                           lineWidth: 2,
+                                           CGPoint(x: 0, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                           CGPoint(x: geometry.size.width, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                           Color.purple)
                         .onAppear {
                             self.viewRouter.naviModel.mode = .inline
                     }
@@ -75,30 +75,16 @@ struct ContentView: View {
                         .background(Color.orange)
                         .offset(y: self.allSafeArea(geometry, .bottom) ?? CGFloat())
                     HStack {
-                        self.tabBoarder(modi: TabModifier(selection:  self.$selection,
-                                                         viewRouter: self.viewRouter, tag: 1),
-                                       lineWidth: 1,
-                                       CGPoint(x: geometry.size.width/4, y: self.safeArea(geometry) ? -10 : -20),
-                                       CGPoint(x: geometry.size.width/4, y: geometry.size.height/10+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
-                                       Color.blue)
-                        self.tabBoarder(modi: TabModifier(selection:  self.$selection,
-                                                         viewRouter: self.viewRouter, tag: 2),
-                                       lineWidth: 1,
-                                       CGPoint(x: geometry.size.width/4, y:  self.safeArea(geometry) ? -10 : -20),
-                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/(self.safeArea(geometry) ? 12 : 10)+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
-                                       Color.blue)
-                        self.tabBoarder(modi: TabModifier(selection:  self.$selection,
-                                                         viewRouter: self.viewRouter, tag: 3),
-                                       lineWidth: 1,
-                                       CGPoint(x: geometry.size.width/4, y:  self.safeArea(geometry) ? -10 : -20),
-                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/10+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
-                                       Color.blue)
-                        self.tabBoarder(modi: TabModifier(selection: self.$selection,
-                                                         viewRouter: self.viewRouter, tag: 4),
-                                       lineWidth: 1,
-                                       CGPoint(x: geometry.size.width/4, y: 0),
-                                       CGPoint(x: geometry.size.width/4, y:  geometry.size.height/10+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
-                                       Color.blue)
+                        ForEach(0..<4) { i in
+                            self.tabBoarder(modi: TabModifier(selection:  self.$selection,
+                                                              viewRouter: self.viewRouter, tag: i+1),
+                                                              lineWidth: 1,
+                                                              CGPoint(x: geometry.size.width/4,
+                                                                      y: self.safeArea(geometry) ? -10 : -20),
+                                                              CGPoint(x: geometry.size.width/4,
+                                                                      y: geometry.size.height/(self.safeArea(geometry) ? i+1 == 2 ? 12 : 10 : 10)+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
+                                                                       Color.blue)
+                        }
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height/10)
                 }
