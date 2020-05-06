@@ -51,7 +51,7 @@ struct SCView: View {
 
                 .onPreferenceChange(ScrollOffsetPreferenceKey.self) { _ in
 
-                    self.viewRouter.setupProcessingTimr(1.0, action: self.action)
+                    self.viewRouter.setupProcessingTimr(3.0, action: self.action)
             }
 
             .onAppear {
