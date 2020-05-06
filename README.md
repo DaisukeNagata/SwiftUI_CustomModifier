@@ -12,7 +12,7 @@ You can Pull To Refresh.
 ```
 
 <p align="center">
-<img src= "https://user-images.githubusercontent.com/16457165/80899041-21a65f00-8d46-11ea-8a78-eede9657eed1.gif" width="320" height="700">
+<img src= "https://user-images.githubusercontent.com/16457165/81165869-b66ebe00-8fcd-11ea-84ac-c04d17baa9b7.gif" width="320" height="700">
  </p>
  
 <p align="center">
