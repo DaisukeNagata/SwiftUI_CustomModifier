@@ -11,7 +11,9 @@ import SwiftUI
 struct SCView: View {
 
     var action: (_ index: Bool) -> Void
+
     @State private var heightOffset: CGFloat = 100
+
     @ObservedObject var viewRouter: ViewRouter
 
     init(viewRouter: ViewRouter, action: @escaping (Bool) -> Void) {
@@ -21,12 +23,14 @@ struct SCView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            self.viewRouter.isAnimating()
-                .frame(maxWidth: .infinity)
-                .frame(height: self.heightOffset)
             ScrollView(showsIndicators: false) {
 
                 VStack(spacing: 0) {
+
+                    self.viewRouter.isAnimating()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: self.heightOffset)
+                        .offset(y: -self.viewRouter.designModel.offset == 0 ? self.heightOffset/2 : 0)
 
                     GeometryReader { insideProxy in
                         TextViews(viewRouter: self.viewRouter)
@@ -34,8 +38,9 @@ struct SCView: View {
                             .preference(key: ScrollOffsetPreferenceKey.self,
                                         value: [self.calculateContentOffset(fromOutsideProxy: geometry,
                                                                             insideProxy: insideProxy)])
+                            .offset(y: self.viewRouter.designModel.offset == 0 ? -self.heightOffset : 0)
                     }
-                    .frame(height: self.heightOffset*CGFloat(self.viewRouter.designModel.texIndex.count == 0 ? 1 : self.viewRouter.designModel.texIndex.count))
+                    .frame(height: self.heightOffset*CGFloat(self.viewRouter.designModel.texIndex.count) - self.heightOffset)
                 }
             }
             .gesture(DragGesture()
