@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct TextViews: View {
+
     @ObservedObject var viewRouter : ViewRouter
-    
+
     var body: some View {
         VStack {
             ForEach(0..<viewRouter.designModel.texIndex.count, id: \.self) { v in

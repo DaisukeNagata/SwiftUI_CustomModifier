@@ -23,4 +23,3 @@ struct Spinner: UIViewRepresentable {
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
-

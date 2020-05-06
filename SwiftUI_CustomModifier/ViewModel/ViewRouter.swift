@@ -37,18 +37,16 @@ class ViewRouter: ObservableObject, TimeLogic {
 
     func isAnimating() -> some View {
         if self.reModel.spinner.isAnimating {
-            return  self.reModel.spinner
+            return self.reModel.spinner
         } else {
             _ = self.reModel.spinner.hidden()
-            return  self.reModel.spinner
         }
+        return  self.reModel.spinner
     }
 
     @objc func timerUpdate()  {
-        withAnimation(.easeInOut(duration: 0.3)) {
-            self.designModel.offset = 0
-            actions(false)
-            self.reModel.timer?.invalidate()
-        }
+        self.designModel.offset = 0
+        actions(false)
+        self.reModel.timer?.invalidate()
     }
 }
