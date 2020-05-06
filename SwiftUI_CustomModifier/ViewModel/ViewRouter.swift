@@ -46,6 +46,7 @@ class ViewRouter: ObservableObject, TimeLogic {
 
     @objc func timerUpdate()  {
         self.designModel.offset = 0
+        self.reModel.id = 0
         actions(false)
         self.reModel.timer?.invalidate()
     }

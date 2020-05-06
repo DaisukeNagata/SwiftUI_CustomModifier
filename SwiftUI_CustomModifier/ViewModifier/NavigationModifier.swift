@@ -58,7 +58,7 @@ struct NavigationModifier: ViewModifier {
                                 self.viewRouter.reModel.spinner.isAnimating = flg
 
                                 defer {
-                                    self.viewRouter.reModel.id = 0
+                                    self.viewRouter.reModel.id = 1
                                 }
 
                                 guard  self.viewRouter.reModel.id == 0 else {
