@@ -18,6 +18,9 @@ struct TextViews: View {
                     .frame(maxWidth: .infinity,alignment: .center)
                     .frame(height: 100)
                     .background( 0 == (v % 2) ? Color.green : Color.yellow)
+                    .onTapGesture {
+                        self.viewRouter.designModel.texIndex.remove(at: v)
+                }
             }
         }
     }

@@ -53,13 +53,25 @@ struct NavigationModifier: ViewModifier {
                                     .frame(width: 32.0, height: 32.0)
                         })
                     NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, action: { flg in
-                        self.viewRouter.reModel.spinner.isAnimating = flg
-                        if flg {
-                            0 == self.viewRouter.designModel.texIndex.count % 2 ?
-                                self.viewRouter.designModel.texIndex.append(Text("Hello")) :
-                                self.viewRouter.designModel.texIndex.append(Text("World"))
+                        if !flg {
+                            if self.viewRouter.reModel.spinner.isAnimating {
+                                self.viewRouter.reModel.spinner.isAnimating = flg
+
+                                defer {
+                                    self.viewRouter.reModel.id = 0
+                                }
+
+                                guard  self.viewRouter.reModel.id == 0 else {
+                                    return
+                                }
+
+                                0 == self.viewRouter.designModel.texIndex.count % 2 ?
+                                    self.viewRouter.designModel.texIndex.append(Text("Hello")) :
+                                    self.viewRouter.designModel.texIndex.append(Text("World"))
+                            }
                         }
-                        })
+                        self.viewRouter.reModel.spinner.isAnimating = flg
+                    })
                     ), tag: self.tag ?? 0, selection: $tag) {
                         EmptyView()
                     }

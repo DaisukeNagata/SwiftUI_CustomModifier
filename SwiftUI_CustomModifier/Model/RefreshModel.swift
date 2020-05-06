@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RefreshModel: Identifiable {
-    let id: Int
+    var id: Int
     var timer: Timer?
     var spinner = Spinner(isAnimating: true, style: .large)
 }
