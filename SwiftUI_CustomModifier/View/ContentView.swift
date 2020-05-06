@@ -23,7 +23,8 @@ struct ContentView: View {
                                              titleText: "Welcome",
                                              backgroundextColor: UIColor.green,
                                              titleTextTextColor: UIColor.yellow,
-                                             largeTitleTextColor: UIColor.black)
+                                             largeTitleTextColor: UIColor.black,
+                                             texIndex: [Text("Hello")])
     }
 
     var body: some View {

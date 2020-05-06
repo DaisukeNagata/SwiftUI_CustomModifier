@@ -9,15 +9,16 @@
 import SwiftUI
 
 struct TextViews: View {
-   @State var desDsign: [Text]
+    @ObservedObject var viewRouter : ViewRouter
+    
     var body: some View {
         VStack {
-            desDsign[0]
-                .frame(maxWidth: .infinity,alignment: .center)
-            .frame(height: UIScreen.main.bounds.height)
-            desDsign[1]
-                .frame(maxWidth: .infinity,alignment: .center)
-            .frame(height: UIScreen.main.bounds.height)
+            ForEach(0..<viewRouter.designModel.texIndex.count, id: \.self) { v in
+                self.viewRouter.designModel.texIndex[v]
+                    .frame(maxWidth: .infinity,alignment: .center)
+                    .frame(height: 100)
+                    .background( 0 == (v % 2) ? Color.green : Color.yellow)
+            }
         }
     }
 }

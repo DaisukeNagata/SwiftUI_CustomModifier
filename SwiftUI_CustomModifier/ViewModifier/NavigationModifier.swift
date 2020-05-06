@@ -10,7 +10,6 @@ import SwiftUI
 
 struct NavigationModifier: ViewModifier {
 
-    @State private var scrollViewContentOffset = CGFloat(0)
     @State var tag : Int?
     @State var view: AnyView
     @ObservedObject var viewRouter: ViewRouter
@@ -53,8 +52,13 @@ struct NavigationModifier: ViewModifier {
                                     .renderingMode(.original)
                                     .frame(width: 32.0, height: 32.0)
                         })
-                    NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, contentOffset: $scrollViewContentOffset,action: { flg in
+                    NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, action: { flg in
                         self.viewRouter.reModel.spinner.isAnimating = flg
+                        if flg {
+                            0 == self.viewRouter.designModel.texIndex.count % 2 ?
+                                self.viewRouter.designModel.texIndex.append(Text("Hello")) :
+                                self.viewRouter.designModel.texIndex.append(Text("World"))
+                        }
                         })
                     ), tag: self.tag ?? 0, selection: $tag) {
                         EmptyView()

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct DesignModel: Identifiable {
+    
     let id: Int
     var flg: Bool
     var offsetFlg: Bool
@@ -19,4 +20,5 @@ struct DesignModel: Identifiable {
     var backgroundextColor: UIColor
     var titleTextTextColor: UIColor
     var largeTitleTextColor: UIColor
+    var texIndex: [Text]
 }

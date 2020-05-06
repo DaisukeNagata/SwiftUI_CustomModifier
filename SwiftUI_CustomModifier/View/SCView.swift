@@ -9,36 +9,33 @@
 import SwiftUI
 
 struct SCView: View {
-    
-    var action: (_ index: Bool) -> Void
 
-    @State private var heightOffset: CGFloat = 200
-    @State private var texIndex = [Text("Hello"),Text("World")]
-    @Binding var contentOffset: CGFloat
-    
+    var action: (_ index: Bool) -> Void
+    @State private var heightOffset: CGFloat = 100
     @ObservedObject var viewRouter: ViewRouter
 
-    init(viewRouter: ViewRouter, contentOffset: Binding<CGFloat>, action: @escaping (Bool) -> Void) {
+    init(viewRouter: ViewRouter, action: @escaping (Bool) -> Void) {
         self.action = action
         self.viewRouter = viewRouter
-        self._contentOffset = contentOffset
     }
 
     var body: some View {
         GeometryReader { geometry in
+            self.viewRouter.isAnimating()
+                .frame(maxWidth: .infinity)
+                .frame(height: self.heightOffset)
             ScrollView(showsIndicators: false) {
+
                 VStack(spacing: 0) {
-                    self.viewRouter.isAnimating()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: self.heightOffset)
-                        .offset(y: -self.viewRouter.designModel.offset == 0 ? self.heightOffset/2 : 0)
+
                     GeometryReader { insideProxy in
-                        TextViews(desDsign: self.texIndex)
+                        TextViews(viewRouter: self.viewRouter)
                             .background(Color.green)
-                            .preference(key: ScrollOffsetPreferenceKey.self, value: [self.calculateContentOffset(fromOutsideProxy: geometry, insideProxy: insideProxy)])
-                            .offset(y: self.viewRouter.designModel.offset == 0 ? -self.heightOffset : 0)
+                            .preference(key: ScrollOffsetPreferenceKey.self,
+                                        value: [self.calculateContentOffset(fromOutsideProxy: geometry,
+                                                                            insideProxy: insideProxy)])
                     }
-                    .frame(height: UIScreen.main.bounds.height*CGFloat(self.texIndex.count) - self.heightOffset)
+                    .frame(height: self.heightOffset*CGFloat(self.viewRouter.designModel.texIndex.count == 0 ? 1 : self.viewRouter.designModel.texIndex.count))
                 }
             }
             .gesture(DragGesture()
@@ -46,8 +43,10 @@ struct SCView: View {
                 value.translation.height > 0 ? self.action(true) : self.action(false)
                 self.viewRouter.designModel.offset = value.translation.height > 0 ? 1 : 0
             }))
+
                 .onPreferenceChange(ScrollOffsetPreferenceKey.self) { _ in
-                    self.viewRouter.setupProcessingTimr(3.0, action: self.action)
+
+                    self.viewRouter.setupProcessingTimr(1.0, action: self.action)
             }
 
             .onAppear {

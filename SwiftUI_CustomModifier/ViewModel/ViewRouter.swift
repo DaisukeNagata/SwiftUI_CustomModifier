@@ -22,7 +22,8 @@ class ViewRouter: ObservableObject, TimeLogic {
                                              titleText: "",
                                              backgroundextColor: UIColor.white,
                                              titleTextTextColor: UIColor.white,
-                                             largeTitleTextColor: UIColor.white)
+                                             largeTitleTextColor: UIColor.white,
+                                             texIndex: [Text("Hello")])
     @Published var reModel = RefreshModel(id: 0)
     @Published var naviModel = NaviModel(id: 0)
 
