@@ -26,7 +26,7 @@ struct ContentView: View {
                                              titleTextTextColor: UIColor.yellow,
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: [Text("Hello")])
-        self.n =  NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
+        self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
         self.viewRouter.naviModel.mode = .inline
     }
 
@@ -35,7 +35,7 @@ struct ContentView: View {
             VStack {
                 ZStack {
 
-                    self.naviBoarder(modi: self.n!,
+                    self.naviBoarder(modi: self.n ?? NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter),
                                            lineWidth: 2,
                                            CGPoint(x: 0,
                                                    y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
