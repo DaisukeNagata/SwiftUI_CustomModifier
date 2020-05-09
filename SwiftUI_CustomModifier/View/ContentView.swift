@@ -12,6 +12,7 @@ struct ContentView: View {
 
     @State private var selection: Int = 1
     @ObservedObject var viewRouter = ViewRouter()
+    var n: NavigationModifier?
 
     init() {
         viewRouter.designModel = DesignModel(id: 0,
@@ -25,6 +26,8 @@ struct ContentView: View {
                                              titleTextTextColor: UIColor.yellow,
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: [Text("Hello")])
+        self.n =  NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
+        self.viewRouter.naviModel.mode = .inline
     }
 
     var body: some View {
@@ -32,16 +35,13 @@ struct ContentView: View {
             VStack {
                 ZStack {
 
-                    self.naviBoarder(modi:
-                        NavigationModifier(view: AnyView(self),
-                                           viewRouter: self.viewRouter),
+                    self.naviBoarder(modi: self.n!,
                                            lineWidth: 2,
-                                           CGPoint(x: 0, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
-                                           CGPoint(x: geometry.size.width, y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                           CGPoint(x: 0,
+                                                   y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                           CGPoint(x: geometry.size.width,
+                                                   y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
                                            Color.purple)
-                        .onAppear {
-                            self.viewRouter.naviModel.mode = .inline
-                    }
 
                     if self.selection == 2 {
                         Button(action: {

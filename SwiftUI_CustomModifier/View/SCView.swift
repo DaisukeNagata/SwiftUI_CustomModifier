@@ -15,10 +15,12 @@ struct SCView: View {
     @State private var heightOffset: CGFloat = 100
 
     @ObservedObject var viewRouter: ViewRouter
+    var t: TextViews?
 
     init(viewRouter: ViewRouter, action: @escaping (Bool) -> Void) {
         self.action = action
         self.viewRouter = viewRouter
+        self.t = TextViews(viewRouter: self.viewRouter)
     }
 
     var body: some View {
@@ -33,7 +35,7 @@ struct SCView: View {
                         .offset(y: -self.viewRouter.designModel.offset == 0 ? self.heightOffset/2 : 0)
 
                     GeometryReader { insideProxy in
-                        TextViews(viewRouter: self.viewRouter)
+                        self.t
                             .background(Color.green)
                             .preference(key: ScrollOffsetPreferenceKey.self,
                                         value: [self.calculateContentOffset(fromOutsideProxy: geometry,

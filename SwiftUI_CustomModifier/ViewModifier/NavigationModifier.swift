@@ -12,7 +12,7 @@ struct NavigationModifier: ViewModifier {
 
     @State var tag : Int?
     @State var view: AnyView
-    @ObservedObject var viewRouter: ViewRouter
+    var viewRouter: ViewRouter
 
     func body(content: Content) -> some View {
         let appearance = UINavigationBarAppearance()
