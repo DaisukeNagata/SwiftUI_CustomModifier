@@ -47,7 +47,7 @@ struct SCView: View {
             }
             .gesture(DragGesture()
             .onChanged({ value in
-                value.translation.height > 0 ? self.action(true) : self.action(false)
+                self.action(true)
                 self.viewRouter.designModel.offset = value.translation.height > 0 ? 1 : 0
             }))
 
