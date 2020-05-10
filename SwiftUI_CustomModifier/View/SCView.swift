@@ -57,8 +57,7 @@ struct SCView: View {
             }
 
             .onAppear {
-                self.viewRouter.reModel.id = 1
-                self.action(false)
+                self.viewRouter.reModel.spinner.isAnimating = false
             }
         }
     }

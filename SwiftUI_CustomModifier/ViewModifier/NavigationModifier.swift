@@ -55,9 +55,6 @@ struct NavigationModifier: ViewModifier {
                     NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, action: { flg in
                         if !flg {
                             if self.viewRouter.reModel.spinner.isAnimating {
-                                self.viewRouter.reModel.spinner.isAnimating = flg
-
-                                guard  self.viewRouter.reModel.id == 0 else { return}
 
                                 0 == self.viewRouter.designModel.texIndex.count % 2 ?
                                     self.viewRouter.designModel.texIndex.insert(contentsOf: [Text("Hello")], at: 0) :
