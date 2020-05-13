@@ -10,7 +10,6 @@
 		BB2707ED243A9A2C00EA43D8 /* SCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SCView.swift */; };
 		BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */; };
 		BB51EE20245EBEE800F28D0C /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE1F245EBEE800F28D0C /* AlertModel.swift */; };
-		BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */; };
 		BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0516245E1E0900D9C696 /* Spinner.swift */; };
 		BB5C051A245E1E4C00D9C696 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0519245E1E4C00D9C696 /* TextViews.swift */; };
 		BB5C051D245E1F0800D9C696 /* TimeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C051C245E1F0800D9C696 /* TimeLogic.swift */; };
@@ -37,7 +36,6 @@
 		BB2707EC243A9A2C00EA43D8 /* SCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCView.swift; sourceTree = "<group>"; };
 		BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		BB51EE1F245EBEE800F28D0C /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
-		BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
 		BB5C0516245E1E0900D9C696 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		BB5C0519245E1E4C00D9C696 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		BB5C051C245E1F0800D9C696 /* TimeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogic.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				BB75A3F224377FFA00EF7FB8 /* Extension+View.swift */,
-				BB5C0514245DD21E00D9C696 /* Extension+CGFloat.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -267,7 +264,6 @@
 				BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */,
 				BB5C051D245E1F0800D9C696 /* TimeLogic.swift in Sources */,
 				BB5C0520245E1F9400D9C696 /* RefreshModel.swift in Sources */,
-				BB5C0515245DD21E00D9C696 /* Extension+CGFloat.swift in Sources */,
 				BB5C0524245E215E00D9C696 /* DesignModel.swift in Sources */,
 				BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */,
 				BB5C051A245E1E4C00D9C696 /* TextViews.swift in Sources */,
