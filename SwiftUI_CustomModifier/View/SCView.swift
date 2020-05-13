@@ -29,17 +29,11 @@ struct SCView: View {
 
                 VStack(spacing: 0) {
 
-                    self.viewRouter.isAnimating()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: self.heightOffset)
-                        .offset(y: -self.viewRouter.designModel.offset == 0 ? self.heightOffset/2 : 0)
+                    self.viewRouter.isAnimating().frame(height: self.heightOffset)
 
                     GeometryReader { insideProxy in
                         self.t
-                            .background(Color.green)
-                            .preference(key: ScrollOffsetPreferenceKey.self,
-                                        value: [self.calculateContentOffset(fromOutsideProxy: geometry,
-                                                                            insideProxy: insideProxy)])
+                            .preference(key: ScrollOffsetPreferenceKey.self, value: [self.calculateContentOffset(fromOutsideProxy: geometry, insideProxy: insideProxy)])
                             .offset(y: self.viewRouter.designModel.offset == 0 ? -self.heightOffset : 0)
                     }
                     .frame(height: self.heightOffset*CGFloat(self.viewRouter.designModel.texIndex.count) - self.heightOffset)
@@ -52,12 +46,7 @@ struct SCView: View {
             }))
 
                 .onPreferenceChange(ScrollOffsetPreferenceKey.self) { _ in
-
                     self.viewRouter.setupProcessingTimr(1.0, action: self.action)
-            }
-
-            .onAppear {
-                self.viewRouter.reModel.spinner.isAnimating = false
             }
         }
     }

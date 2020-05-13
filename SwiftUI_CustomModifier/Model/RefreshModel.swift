@@ -11,5 +11,5 @@ import SwiftUI
 struct RefreshModel: Identifiable {
     var id: Int
     var timer: Timer?
-    var spinner = Spinner(isAnimating: true, style: .large)
+    var spinner = Spinner(isAnimating: false, style: .large)
 }
