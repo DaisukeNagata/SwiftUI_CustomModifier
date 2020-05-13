@@ -42,7 +42,7 @@ struct SCView: View {
             .gesture(DragGesture()
             .onChanged({ value in
                 self.action(true)
-                self.viewRouter.designModel.offset = value.translation.height > 0 ? 1 : 0
+                self.viewRouter.designModel.offset = value.translation.height
             }))
 
                 .onPreferenceChange(ScrollOffsetPreferenceKey.self) { _ in
