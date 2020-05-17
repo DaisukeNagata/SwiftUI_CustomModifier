@@ -11,7 +11,7 @@ import SwiftUI
 struct PDFModifier: ViewModifier {
     
     // Select the view you like
-    @State var pdfView : PDFView
+    @State var pdfView : AnyView
     
     func body(content: Content) -> some View {
         PDFKitRepresentedView(view: AnyView(self.pdfView), name: "SomeThing")

@@ -64,7 +64,8 @@ struct ContentView: View {
                     }
 
                     if self.selection == 3 {
-                        self.modifier(PDFModifier(pdfView: PDFView()))
+                        // Select the view you like
+                        self.modifier(PDFModifier(pdfView: AnyView(PDFView())))
                     }
                 }
 
