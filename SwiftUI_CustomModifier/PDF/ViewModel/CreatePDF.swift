@@ -22,7 +22,7 @@ final class CreatePDF {
             .appendingPathComponent("\(st).pdf")?
             .path else
         { return }
-        
+
         stI.set.path = path2
         make(views: view, path: path2, stI: stI)
     }
@@ -37,17 +37,17 @@ final class CreatePDF {
     }
 
     private class func renderViews(views: [UIView], stI: PramViewModel) {
-
-           guard let context = UIGraphicsGetCurrentContext() else { return }
-
-           views.forEach {
-               UIGraphicsBeginPDFPageWithInfo(UIScreen.main.bounds, nil)
-               $0.layer.render(in: context)
-           }
-
-           stI.set.document = UIDocumentInteractionController(url: URL(fileURLWithPath: stI.set.path))
-           if !stI.set.document.presentOpenInMenu(from: UIScreen.main.bounds, in: views[0], animated: true) {
-               print("Nothing")
-           }
-       }
+        
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        
+        views.forEach {
+            UIGraphicsBeginPDFPageWithInfo(UIScreen.main.bounds, nil)
+            $0.layer.render(in: context)
+        }
+        
+        stI.set.document = UIDocumentInteractionController(url: URL(fileURLWithPath: stI.set.path))
+        if stI.set.document.presentOpenInMenu(from: UIScreen.main.bounds, in: views[0], animated: true) {
+            print("Nothing")
+        }
+    }
 }
