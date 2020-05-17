@@ -64,7 +64,7 @@ struct ContentView: View {
                     }
 
                     if self.selection == 3 {
-                        Text("Hello, World!")
+                        self.modifier(PDFModifier(pdfView: PDFView()))
                     }
                 }
 

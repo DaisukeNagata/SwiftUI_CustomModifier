@@ -15,7 +15,7 @@ struct TabModifier: ViewModifier {
         Icon(id: 0, name: ""),
         Icon(id: 1, name: "clock.fill"),
         Icon(id: 2, name: "heart"),
-        Icon(id: 3, name: "arkit"),
+        Icon(id: 3, name: "square.and.arrow.up.fill"),
         Icon(id: 4, name: "arrow.up.right.video"),
     ]
 
