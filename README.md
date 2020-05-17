@@ -9,7 +9,13 @@ You can also customize the border of the View.
 You can customize the action sheet.
 
 You can Pull To Refresh.
+
+You can make PDF File.
 ```
+
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/16457165/82133371-4e6a7400-9826-11ea-8eba-67d9f4f8e9aa.gif" width="320" height="700">
+ </p>
 
 <p align="center">
 <img src= "https://user-images.githubusercontent.com/16457165/81165869-b66ebe00-8fcd-11ea-84ac-c04d17baa9b7.gif" width="320" height="700">
