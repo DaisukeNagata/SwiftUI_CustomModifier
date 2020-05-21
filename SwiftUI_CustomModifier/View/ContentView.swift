@@ -11,8 +11,11 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var selection: Int = 1
+    @State private var offset: CGFloat = 0
+    @State private var offsetY: CGFloat = 0
     @ObservedObject var viewRouter = ViewRouter()
     var n: NavigationModifier?
+    var ob: CIImageObject?
 
     init() {
         viewRouter.designModel = DesignModel(id: 0,
@@ -26,6 +29,12 @@ struct ContentView: View {
                                              titleTextTextColor: UIColor.yellow,
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: [Text("Hello")])
+        ob = CIImageObject(size: CGSize(width: 300, height: 300),
+                                  st: "image",
+                                  image: Image("image"),
+                                  checkFlg: false,
+                                  beginImage: CIImage())
+
         self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
         self.viewRouter.naviModel.mode = .inline
     }
@@ -66,6 +75,25 @@ struct ContentView: View {
                     if self.selection == 3 {
                         // Select the view you like
                         self.modifier(PDFModifier(pdfView: AnyView(PDFView())))
+                    }
+                    
+                    if self.selection == 4 {
+                        // Mask Logic
+                        ZStack {
+                            Text("印")
+                                .frame(maxWidth: .infinity, maxHeight: 100)
+                                .font(.title)
+                                .foregroundColor(Color.black)
+                                .background(Color.white)
+                            self.modifier(CIMaskModifier(ob: self.ob ?? CIImageObject())).offset(x: self.offset, y: self.offsetY)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .gesture(DragGesture()
+                        .onChanged{ value in
+                            self.offset = value.translation.width
+                            self.offsetY = value.translation.height
+                            }
+                        )
                     }
                 }
 
