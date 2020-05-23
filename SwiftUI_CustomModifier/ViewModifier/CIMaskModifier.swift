@@ -65,7 +65,7 @@ struct CIMaskModifier:  ViewModifier {
             if let cgimgChange = contextChange.createCGImage(outputImageChange, from: outputImage.extent) {
                 let uiImageChange = UIImage(cgImage: cgimgChange)
                 imageView.image = uiImage.masking(maskImage: uiImageChange)?.reSizeImage(reSize: CGSize(width: size.width, height: size.height))
-                imageView.image = imageView.image!.scaleImage(scaleSize: 1)
+                imageView.image = imageView.image?.scaleImage(scaleSize: 1)
                 ob.image = Image(uiImage: imageView.image ?? UIImage())
             }
         }
