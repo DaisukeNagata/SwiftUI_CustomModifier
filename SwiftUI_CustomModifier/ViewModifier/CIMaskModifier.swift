@@ -50,7 +50,7 @@ struct CIMaskModifier:  ViewModifier {
             uiImage = UIImage(cgImage: cgimg)
             ob.beginImage = CIImage(image: uiImage) ?? CIImage()
             imageView.image = uiImage.masking(maskImage: uiImage)?.reSizeImage(reSize: CGSize(width: size.width, height: size.height))
-            imageView.image = imageView.image!.scaleImage(scaleSize: 1)
+            imageView.image = imageView.image?.scaleImage(scaleSize: 1)
             ob.image = Image(uiImage: imageView.image ?? UIImage())
         }
 
