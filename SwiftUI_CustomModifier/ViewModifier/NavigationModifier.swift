@@ -11,7 +11,7 @@ import SwiftUI
 struct NavigationModifier: ViewModifier {
 
     @State var tag : Int?
-    @State var view: AnyView
+    @State var view: AnyView?
     var viewRouter: ViewRouter
 
     func body(content: Content) -> some View {

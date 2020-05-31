@@ -14,10 +14,18 @@ struct ContentView: View {
     @State private var offset: CGFloat = 0
     @State private var offsetY: CGFloat = 0
     @ObservedObject var viewRouter = ViewRouter()
-    var n: NavigationModifier?
-    var ob: CIImageObject?
+    private var n : NavigationModifier?
+    private var ob: CIImageObject
 
     init() {
+
+        ob = CIImageObject(size: CGSize(width: 300, height: 300),
+                           image: Image("image"),
+                           checkFlg: false,
+                           beginImage: CIImage())
+
+        self.ob.uIImage = UIImage(named: "image")
+
         viewRouter.designModel = DesignModel(id: 0,
                                              flg: false,
                                              offsetFlg: false,
@@ -29,13 +37,9 @@ struct ContentView: View {
                                              titleTextTextColor: UIColor.yellow,
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: [Text("Hello")])
-        ob = CIImageObject(size: CGSize(width: 300, height: 300),
-                           image: Image("image"),
-                           checkFlg: false,
-                           beginImage: CIImage())
-        self.ob?.uIImage = UIImage(named: "image")
 
         self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
+
         self.viewRouter.naviModel.mode = .inline
     }
 
@@ -44,7 +48,7 @@ struct ContentView: View {
             VStack {
                 ZStack {
 
-                    self.naviBoarder(modi: self.n ?? NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter),
+                    self.naviBoarder(modi: self.n ?? NavigationModifier(viewRouter: self.viewRouter),
                                            lineWidth: 2,
                                            CGPoint(x: 0,
                                                    y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
@@ -85,7 +89,7 @@ struct ContentView: View {
                                 .font(.title)
 //                                .foregroundColor(Color.black)
 //                                .background(Color.white)
-                            self.modifier(CIMaskModifier(ob: self.ob ?? CIImageObject())).offset(x: self.offset, y: self.offsetY)
+                            self.modifier(CIMaskModifier(ob: self.ob)).offset(x: self.offset, y: self.offsetY)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .gesture(DragGesture()
