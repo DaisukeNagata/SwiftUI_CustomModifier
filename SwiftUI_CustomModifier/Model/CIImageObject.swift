@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class CIImageObject: ObservableObject {
+final class CIImageObject: ObservableObject {
 
     @Published  var uIImage: UIImage? = nil
     @Published  var size: CGSize
