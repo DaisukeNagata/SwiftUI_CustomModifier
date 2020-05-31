@@ -36,7 +36,7 @@ struct ContentView: View {
                                              titleTextTextColor: UIColor.yellow,
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: [Text("Hello")])
-        
+
         self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
 
         self.viewRouter.naviModel.mode = .inline
