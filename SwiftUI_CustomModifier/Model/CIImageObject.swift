@@ -9,15 +9,15 @@
 import SwiftUI
 
 class CIImageObject: ObservableObject {
+
+    @Published  var uIImage: UIImage? = nil
     @Published  var size: CGSize
-    @Published  var st: String
     @Published  var image: Image
     @Published  var checkFlg: Bool
     @Published  var beginImage: CIImage
-    
-    init(size: CGSize? = nil, st: String? = nil, image: Image? = nil, checkFlg: Bool? = nil, beginImage: CIImage? = nil) {
+
+    init(size: CGSize? = nil, image: Image? = nil, checkFlg: Bool? = nil, beginImage: CIImage? = nil) {
         self.size = size ?? CGSize()
-        self.st = st ?? ""
         self.image = image ?? Image("")
         self.checkFlg = checkFlg ?? false
         self.beginImage = beginImage ?? CIImage()

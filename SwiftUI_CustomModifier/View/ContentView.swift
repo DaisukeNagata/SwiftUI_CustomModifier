@@ -30,10 +30,10 @@ struct ContentView: View {
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: [Text("Hello")])
         ob = CIImageObject(size: CGSize(width: 300, height: 300),
-                                  st: "image",
-                                  image: Image("image"),
-                                  checkFlg: false,
-                                  beginImage: CIImage())
+                           image: Image("image"),
+                           checkFlg: false,
+                           beginImage: CIImage())
+        self.ob?.uIImage = UIImage(named: "image")
 
         self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
         self.viewRouter.naviModel.mode = .inline
@@ -83,8 +83,8 @@ struct ContentView: View {
                             Text("印")
                                 .frame(maxWidth: .infinity, maxHeight: 100)
                                 .font(.title)
-                                .foregroundColor(Color.black)
-                                .background(Color.white)
+//                                .foregroundColor(Color.black)
+//                                .background(Color.white)
                             self.modifier(CIMaskModifier(ob: self.ob ?? CIImageObject())).offset(x: self.offset, y: self.offsetY)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)

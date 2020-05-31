@@ -11,12 +11,12 @@ import CoreImage.CIFilterBuiltins
 struct CIMaskModifier:  ViewModifier {
 
     @ObservedObject var ob: CIImageObject
-    
+
     init(ob: CIImageObject) {
         self.ob = ob
-        loadImage(ob.checkFlg, named: ob.st, size: CGSize(width: ob.size.width, height: ob.size.height))
+        loadImage(ob.checkFlg, size: CGSize(width: ob.size.width, height: ob.size.height))
     }
-    
+
     func body(content: Content) -> some View {
         ob.image
             .renderingMode(.template)
@@ -25,24 +25,24 @@ struct CIMaskModifier:  ViewModifier {
             .background(Color.clear)
             .onTapGesture {
                 self.ob.checkFlg.toggle()
-                self.loadImage(self.ob.checkFlg, named: self.ob.st, size: CGSize(width: self.ob.size.width, height: self.ob.size.height))
+                self.loadImage(self.ob.checkFlg, size: CGSize(width: self.ob.size.width, height: self.ob.size.height))
         }
     }
-    
-    private func loadImage(_ obs: Bool, named: String, size: CGSize) {
-        
-        guard let inputImage = UIImage(named: named) else { return }
+
+    private func loadImage(_ obs: Bool, size: CGSize) {
+
+        guard let inputImage = self.ob.uIImage else { return }
         ob.beginImage = CIImage(image: inputImage)!
-        
+
         let context = CIContext()
         let currentFilter = CIFilter.colorMonochrome()
         currentFilter.inputImage = ob.beginImage
         currentFilter.setValue(CIColor(red: 1, green: 1, blue: 1), forKey: "inputColor")
-        
+
         currentFilter.setValue(1, forKey: "inputIntensity")
         currentFilter.intensity = 5
         guard let outputImage = currentFilter.outputImage else { return }
-        
+
         var uiImage = UIImage()
         let imageView = UIImageView()
 
