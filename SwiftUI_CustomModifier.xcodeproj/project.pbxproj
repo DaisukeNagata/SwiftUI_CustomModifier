@@ -39,6 +39,8 @@
 		BB75A3F8243780B300EF7FB8 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3F7243780B300EF7FB8 /* Icon.swift */; };
 		BB75A3FB243780E600EF7FB8 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */; };
 		BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */; };
+		BB8E29F724846C4A007E761E /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E29F624846C4A007E761E /* MaskView.swift */; };
+		BB8E29F924846CEC007E761E /* BoarderLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E29F824846CEC007E761E /* BoarderLineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		BB75A3F7243780B300EF7FB8 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		BB75A3FA243780E600EF7FB8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
+		BB8E29F624846C4A007E761E /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		BB8E29F824846CEC007E761E /* BoarderLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoarderLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */,
+				BB8E29F824846CEC007E761E /* BoarderLineView.swift */,
 				BB60DCC9243641C700C21B7B /* ContentView.swift */,
 				BB2707EC243A9A2C00EA43D8 /* SCView.swift */,
 				BB5C0519245E1E4C00D9C696 /* TextViews.swift */,
+				BB8E29F624846C4A007E761E /* MaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				BB13CFA22470732B0020B094 /* PDFKitRepresentedView.swift in Sources */,
 				BB60DCC6243641C700C21B7B /* AppDelegate.swift in Sources */,
 				BB5C0522245E20B000D9C696 /* NaviModel.swift in Sources */,
+				BB8E29F924846CEC007E761E /* BoarderLineView.swift in Sources */,
 				BB13CF9E247071EF0020B094 /* PramViewModel.swift in Sources */,
 				BB50D44C2476D2A0002E903C /* CIImageObject.swift in Sources */,
 				BB60DCC8243641C700C21B7B /* SceneDelegate.swift in Sources */,
@@ -332,6 +339,7 @@
 				BB5C0520245E1F9400D9C696 /* RefreshModel.swift in Sources */,
 				BB5C0524245E215E00D9C696 /* DesignModel.swift in Sources */,
 				BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */,
+				BB8E29F724846C4A007E761E /* MaskView.swift in Sources */,
 				BB5C051A245E1E4C00D9C696 /* TextViews.swift in Sources */,
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
 				BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */,
