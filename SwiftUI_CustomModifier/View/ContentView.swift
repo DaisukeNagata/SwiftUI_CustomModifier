@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @State private var selection: Int = 1
-    
-    @ObservedObject var viewRouter = ViewRouter()
+
+    @ObservedObject private var viewRouter = ViewRouter()
     private var n : NavigationModifier?
     private var ob: CIImageObject
-    
+
     init() {
 
         ob = CIImageObject(size: CGSize(width: 300, height: 300),
@@ -70,27 +70,7 @@ struct ContentView: View {
                     }
                 }
 
-                ZStack {
-                    self.boarder(tex: "", lineWidth: 2.0, CGPoint(x: 0, y: 0), CGPoint(x: geometry.size.width, y: 0), Color.blue)
-                        .frame(width: geometry.size.width, height: geometry.size.height/10)
-                        .background(Color.yellow)
-                        .offset(y: -(self.allSafeArea(geometry, .top) ?? CGFloat()))
-                        .background(Color.orange)
-                        .offset(y: self.allSafeArea(geometry, .bottom) ?? CGFloat())
-                    HStack {
-                        ForEach(0..<4) { i in
-                            self.tabBoarder(modi: TabModifier(selection:  self.$selection,
-                                                              viewRouter: self.viewRouter, tag: i+1),
-                                            lineWidth: 1,
-                                            CGPoint(x: geometry.size.width/4,
-                                                    y: self.safeArea(geometry) ? -10 : -20),
-                                            CGPoint(x: geometry.size.width/4,
-                                                    y: geometry.size.height/(self.safeArea(geometry) ? i+1 == 2 ? 12 : 10 : 10)+(self.allSafeArea(geometry, .bottom) ?? CGFloat())),
-                                            Color.blue)
-                        }
-                    }
-                    .frame(width: geometry.size.width, height: geometry.size.height/10)
-                }
+               TabView(geometry: geometry, selection: self.$selection, viewRouter: self.viewRouter)
             }
             self.modifier(AlertModifer(view:  AnyView(AlertChoiceView(viewRouter: self.viewRouter))))
         }

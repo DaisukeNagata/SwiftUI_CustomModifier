@@ -41,6 +41,7 @@
 		BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */; };
 		BB8E29F724846C4A007E761E /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E29F624846C4A007E761E /* MaskView.swift */; };
 		BB8E29F924846CEC007E761E /* BoarderLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E29F824846CEC007E761E /* BoarderLineView.swift */; };
+		BB8E29FB248476F1007E761E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E29FA248476F1007E761E /* TabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		BB75A3FC2437823D00EF7FB8 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
 		BB8E29F624846C4A007E761E /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		BB8E29F824846CEC007E761E /* BoarderLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoarderLineView.swift; sourceTree = "<group>"; };
+		BB8E29FA248476F1007E761E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				BB2707EC243A9A2C00EA43D8 /* SCView.swift */,
 				BB5C0519245E1E4C00D9C696 /* TextViews.swift */,
 				BB8E29F624846C4A007E761E /* MaskView.swift */,
+				BB8E29FA248476F1007E761E /* TabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
 				BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */,
 				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
+				BB8E29FB248476F1007E761E /* TabView.swift in Sources */,
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
 				BB13CF9A247071A30020B094 /* PDFParm.swift in Sources */,
 				BB13CFA6247074390020B094 /* PDFModifier.swift in Sources */,
