@@ -36,6 +36,8 @@ struct TabModifier: ViewModifier {
                     .onTapGesture {
                         self.selection.wrappedValue = self.tag
                         self.viewRouter.designModel.offsetFlg.toggle()
+                        // this is Navigation on/off
+                        self.selection.wrappedValue == 1 ? self.viewRouter.naviModel.isHiddenFlg.toggle() : nil
                 }
             }
         }

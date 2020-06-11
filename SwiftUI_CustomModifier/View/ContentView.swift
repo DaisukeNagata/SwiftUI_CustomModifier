@@ -54,7 +54,8 @@ struct ContentView: View {
                                      CGPoint(x: geometry.size.width,
                                              y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
                                      Color.purple)
-
+                        .isHidden(self.viewRouter.naviModel.isHiddenFlg)
+                    
                     if self.selection == 2 {
                         BoarderLineView()
                     }
@@ -70,7 +71,7 @@ struct ContentView: View {
                     }
                 }
 
-               TabView(geometry: geometry, selection: self.$selection, viewRouter: self.viewRouter)
+                TabView(geometry: geometry, selection: self.$selection, viewRouter: self.viewRouter)
             }
             self.modifier(AlertModifer(view:  AnyView(AlertChoiceView(viewRouter: self.viewRouter))))
         }

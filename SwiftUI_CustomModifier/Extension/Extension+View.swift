@@ -14,6 +14,10 @@ enum Area {
 
 extension View {
 
+    func isHidden(_ bool: Bool) -> some View {
+        modifier(HiddenModifier(isHidden: bool))
+    }
+    
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
@@ -103,5 +107,21 @@ extension View {
     
     func safeArea(_ safeArea: GeometryProxy) -> Bool {
         return safeArea.safeAreaInsets.bottom == 0 ? false : true
+    }
+}
+
+
+private struct HiddenModifier: ViewModifier {
+
+    fileprivate let isHidden: Bool
+
+    fileprivate func body(content: Content) -> some View {
+        Group {
+            if isHidden {
+                content.hidden()
+            } else {
+                content
+            }
+        }
     }
 }

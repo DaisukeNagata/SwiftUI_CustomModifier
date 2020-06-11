@@ -10,7 +10,6 @@ import SwiftUI
 
 struct NaviModel: Identifiable {
     let id: Int
-    var appearance = UINavigationBarAppearance()
-    var navigationBar = UINavigationBar.appearance()
+    var isHiddenFlg = false
     var mode =  NavigationBarItem.TitleDisplayMode.automatic
 }
