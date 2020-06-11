@@ -13,7 +13,13 @@ You can Pull To Refresh.
 You can make PDF File.
 
 You can mask Image.
+
+this is Navigation on/off
 ```
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/16457165/84437057-5d9ae100-ac6f-11ea-86a3-cc75cb4dde32.gif" width="320" height="700">
+ </p>
+
 <p align="center">
 <img src= "https://user-images.githubusercontent.com/16457165/82578957-1073a400-9bc8-11ea-82f2-7d21361abb59.gif" width="320" height="700">
  </p>
