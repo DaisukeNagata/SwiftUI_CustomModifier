@@ -34,24 +34,17 @@ struct NavigationModifier: ViewModifier {
                     Text("")
                         .navigationBarItems(leading:
                             Button(action: {
-                                withAnimation {
-                                    self.viewRouter.designModel.flg.toggle()
-                                }
+                                withAnimation { self.viewRouter.designModel.flg.toggle()}
                             }) {
-                                Image(systemName: "person.crop.circle")
-                                    .resizable()
-                                    .renderingMode(.original)
-                                    .frame(width: 32.0, height: 32.0)
-                            },
-                                            trailing:
+                                SetDesgin(ima: Image(systemName: "person.crop.circle") )
+                            }, trailing:
+
                             Button(action: {
                                 self.tag = 1
                             }) {
-                                Image(systemName: "arrow.right")
-                                    .resizable()
-                                    .renderingMode(.original)
-                                    .frame(width: 32.0, height: 32.0)
-                        })
+                                SetDesgin(ima: Image(systemName: "arrow.right") )
+                        }
+                    )
                     NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, action: { flg in
                         if !flg {
                             if self.viewRouter.reModel.spinner.isAnimating {
@@ -72,8 +65,14 @@ struct NavigationModifier: ViewModifier {
     }
 }
 
-struct NavigationModifier_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+
+private struct SetDesgin: View {
+    var ima: Image
+    var body: some View {
+        return
+            ima
+            .resizable()
+            .renderingMode(.original)
+            .frame(width: 32.0, height: 32.0)
     }
 }
