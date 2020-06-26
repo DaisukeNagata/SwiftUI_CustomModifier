@@ -36,11 +36,7 @@ class ViewRouter: ObservableObject, TimeLogic {
     }
 
     func isAnimating() -> some View {
-        if self.reModel.spinner.isAnimating {
-            return self.reModel.spinner
-        } else {
-            _ = self.reModel.spinner.hidden()
-        }
+        _ = self.reModel.spinner.isAnimating ? self.reModel.spinner.hidden() : nil
         return  self.reModel.spinner
     }
 
