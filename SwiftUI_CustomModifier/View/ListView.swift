@@ -34,10 +34,12 @@ struct ListView: View {
                 }
                 .gesture(DragGesture()
                             .onChanged({ value in
+                                // Example
                                 self.action(true)
                             }))
                 .onPreferenceChange(ScrollOffsetPreferenceKey.self) { key in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    // Example
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.action(false)
                     }
                 }
@@ -46,9 +48,5 @@ struct ListView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .edgesIgnoringSafeArea(.all)
         }
-    }
-
-    private func calculateContentOffset(fromOutsideProxy outsideProxy: GeometryProxy, insideProxy: GeometryProxy) -> CGFloat {
-        return outsideProxy.frame(in: .global).minY - insideProxy.frame(in: .global).minY
     }
 }
