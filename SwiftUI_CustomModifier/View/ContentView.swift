@@ -28,14 +28,13 @@ struct ContentView: View {
         viewRouter.designModel = DesignModel(id: 0,
                                              flg: false,
                                              offsetFlg: false,
-                                             offset: 0,
                                              lineWidth: 0,
                                              heartView: "heart.fill",
                                              titleText: "Welcome",
                                              backgroundextColor: UIColor.green,
                                              titleTextTextColor: UIColor.yellow,
                                              largeTitleTextColor: UIColor.black,
-                                             texIndex: [Text("Hello")])
+                                             texIndex: ["Hello"])
 
         self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
 

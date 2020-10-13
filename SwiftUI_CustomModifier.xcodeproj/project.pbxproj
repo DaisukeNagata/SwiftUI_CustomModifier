@@ -13,15 +13,13 @@
 		BB13CFA22470732B0020B094 /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13CFA12470732B0020B094 /* PDFKitRepresentedView.swift */; };
 		BB13CFA4247073520020B094 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13CFA3247073520020B094 /* PDFView.swift */; };
 		BB13CFA6247074390020B094 /* PDFModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13CFA5247074390020B094 /* PDFModifier.swift */; };
-		BB2707ED243A9A2C00EA43D8 /* SCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* SCView.swift */; };
+		BB2707ED243A9A2C00EA43D8 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2707EC243A9A2C00EA43D8 /* ListView.swift */; };
 		BB50D44A2476D23F002E903C /* CIMaskModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50D4492476D23F002E903C /* CIMaskModifier.swift */; };
 		BB50D44C2476D2A0002E903C /* CIImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50D44B2476D2A0002E903C /* CIImageObject.swift */; };
 		BB50D44E2476D2C0002E903C /* Extension+UIIMage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50D44D2476D2BF002E903C /* Extension+UIIMage.swift */; };
 		BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */; };
 		BB51EE20245EBEE800F28D0C /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51EE1F245EBEE800F28D0C /* AlertModel.swift */; };
 		BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0516245E1E0900D9C696 /* Spinner.swift */; };
-		BB5C051A245E1E4C00D9C696 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0519245E1E4C00D9C696 /* TextViews.swift */; };
-		BB5C051D245E1F0800D9C696 /* TimeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C051C245E1F0800D9C696 /* TimeLogic.swift */; };
 		BB5C0520245E1F9400D9C696 /* RefreshModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C051F245E1F9400D9C696 /* RefreshModel.swift */; };
 		BB5C0522245E20B000D9C696 /* NaviModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0521245E20B000D9C696 /* NaviModel.swift */; };
 		BB5C0524245E215E00D9C696 /* DesignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C0523245E215E00D9C696 /* DesignModel.swift */; };
@@ -51,15 +49,13 @@
 		BB13CFA12470732B0020B094 /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
 		BB13CFA3247073520020B094 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
 		BB13CFA5247074390020B094 /* PDFModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFModifier.swift; sourceTree = "<group>"; };
-		BB2707EC243A9A2C00EA43D8 /* SCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCView.swift; sourceTree = "<group>"; };
+		BB2707EC243A9A2C00EA43D8 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		BB50D4492476D23F002E903C /* CIMaskModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMaskModifier.swift; sourceTree = "<group>"; };
 		BB50D44B2476D2A0002E903C /* CIImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImageObject.swift; sourceTree = "<group>"; };
 		BB50D44D2476D2BF002E903C /* Extension+UIIMage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIIMage.swift"; sourceTree = "<group>"; };
 		BB51EE10245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		BB51EE1F245EBEE800F28D0C /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		BB5C0516245E1E0900D9C696 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
-		BB5C0519245E1E4C00D9C696 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
-		BB5C051C245E1F0800D9C696 /* TimeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogic.swift; sourceTree = "<group>"; };
 		BB5C051F245E1F9400D9C696 /* RefreshModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshModel.swift; sourceTree = "<group>"; };
 		BB5C0521245E20B000D9C696 /* NaviModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviModel.swift; sourceTree = "<group>"; };
 		BB5C0523245E215E00D9C696 /* DesignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignModel.swift; sourceTree = "<group>"; };
@@ -128,20 +124,11 @@
 				BB60DCDB2436420F00C21B7B /* AlertChoiceView.swift */,
 				BB8E29F824846CEC007E761E /* BoarderLineView.swift */,
 				BB60DCC9243641C700C21B7B /* ContentView.swift */,
-				BB2707EC243A9A2C00EA43D8 /* SCView.swift */,
-				BB5C0519245E1E4C00D9C696 /* TextViews.swift */,
+				BB2707EC243A9A2C00EA43D8 /* ListView.swift */,
 				BB8E29F624846C4A007E761E /* MaskView.swift */,
 				BB8E29FA248476F1007E761E /* TabView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BB5C051B245E1EFA00D9C696 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				BB5C051C245E1F0800D9C696 /* TimeLogic.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		BB5C051E245E1F6E00D9C696 /* ViewModel */ = {
@@ -173,7 +160,6 @@
 			children = (
 				BB60DCC5243641C700C21B7B /* AppDelegate.swift */,
 				BB60DCC7243641C700C21B7B /* SceneDelegate.swift */,
-				BB5C051B245E1EFA00D9C696 /* Protocol */,
 				BB5C051E245E1F6E00D9C696 /* ViewModel */,
 				BB75A3F42437804D00EF7FB8 /* Model */,
 				BB5C0518245E1E2800D9C696 /* View */,
@@ -277,7 +263,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "永田大祐";
 				TargetAttributes = {
 					BB60DCC1243641C700C21B7B = {
@@ -337,13 +323,11 @@
 				BB50D44E2476D2C0002E903C /* Extension+UIIMage.swift in Sources */,
 				BB50D44A2476D23F002E903C /* CIMaskModifier.swift in Sources */,
 				BB60DCDA243641DD00C21B7B /* TabModifier.swift in Sources */,
-				BB5C051D245E1F0800D9C696 /* TimeLogic.swift in Sources */,
 				BB13CFA4247073520020B094 /* PDFView.swift in Sources */,
 				BB5C0520245E1F9400D9C696 /* RefreshModel.swift in Sources */,
 				BB5C0524245E215E00D9C696 /* DesignModel.swift in Sources */,
 				BB51EE11245E83D800F28D0C /* ScrollOffsetPreferenceKey.swift in Sources */,
 				BB8E29F724846C4A007E761E /* MaskView.swift in Sources */,
-				BB5C051A245E1E4C00D9C696 /* TextViews.swift in Sources */,
 				BB75A3F324377FFA00EF7FB8 /* Extension+View.swift in Sources */,
 				BB5C0517245E1E0900D9C696 /* Spinner.swift in Sources */,
 				BB75A3FD2437823D00EF7FB8 /* NavigationModifier.swift in Sources */,
@@ -351,7 +335,7 @@
 				BB60DCCA243641C700C21B7B /* ContentView.swift in Sources */,
 				BB13CF9A247071A30020B094 /* PDFParm.swift in Sources */,
 				BB13CFA6247074390020B094 /* PDFModifier.swift in Sources */,
-				BB2707ED243A9A2C00EA43D8 /* SCView.swift in Sources */,
+				BB2707ED243A9A2C00EA43D8 /* ListView.swift in Sources */,
 				BB75A3F62437805F00EF7FB8 /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +380,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -420,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -456,6 +441,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -474,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -493,6 +479,7 @@
 				DEVELOPMENT_TEAM = B3ZKJZUE9E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_CustomModifier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,6 +500,7 @@
 				DEVELOPMENT_TEAM = B3ZKJZUE9E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_CustomModifier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -45,15 +45,13 @@ struct NavigationModifier: ViewModifier {
                                 SetDesgin(ima: Image(systemName: "arrow.right") )
                         }
                     )
-                    NavigationLink(destination: AnyView(SCView( viewRouter: self.viewRouter, action: { flg in
-                        if !flg {
-                            if self.viewRouter.reModel.spinner.isAnimating {
-
+                    NavigationLink(destination: AnyView(ListView( viewRouter: self.viewRouter, action: { flg in
+                            if flg {
+                                
                                 0 == self.viewRouter.designModel.texIndex.count % 2 ?
-                                    self.viewRouter.designModel.texIndex.insert(contentsOf: [Text("Hello")], at: 0) :
-                                    self.viewRouter.designModel.texIndex.insert(contentsOf: [Text("Word")], at: 0)
+                                    self.viewRouter.designModel.texIndex.append("Hello") :
+                                    self.viewRouter.designModel.texIndex.append("World")
                             }
-                        }
                         self.viewRouter.reModel.spinner.isAnimating = flg
                     })
                     ), tag: self.tag ?? 0, selection: $tag) {
