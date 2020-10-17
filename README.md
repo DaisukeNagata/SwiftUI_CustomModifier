@@ -24,7 +24,6 @@ this is Navigation on/off
 <img src= "https://user-images.githubusercontent.com/16457165/82578957-1073a400-9bc8-11ea-82f2-7d21361abb59.gif" width="320" height="700">
  </p>
 
-
 <p align="center">
 <img src= "https://user-images.githubusercontent.com/16457165/82133371-4e6a7400-9826-11ea-8eba-67d9f4f8e9aa.gif" width="320" height="700">
  </p>
