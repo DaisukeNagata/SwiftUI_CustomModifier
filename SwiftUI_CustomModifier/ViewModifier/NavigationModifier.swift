@@ -59,7 +59,8 @@ struct NavigationModifier: ViewModifier {
                     }
                     .navigationBarTitle("\(self.viewRouter.designModel.titleText)", displayMode: viewRouter.naviModel.mode)
                 }
-        }
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
