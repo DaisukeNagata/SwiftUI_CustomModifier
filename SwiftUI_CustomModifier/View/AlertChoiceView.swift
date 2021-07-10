@@ -11,13 +11,13 @@ import SwiftUI
 struct AlertChoiceView: View {
 
     @State private var selection: Int = 1
-    @ObservedObject var viewRouter: ViewModel
+    @ObservedObject var viewModel: ViewModel
 
     // 画面の閉じる判定
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                if self.viewRouter.designModel.flg {
+                if self.viewModel.designModel.flg {
                     Color.gray
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .onTapGesture {
@@ -29,7 +29,7 @@ struct AlertChoiceView: View {
                     .edgesIgnoringSafeArea(.all)
                     
                     Color.white
-                        .transition(.move(edge: self.viewRouter.alertModel.edge))
+                        .transition(.move(edge: self.viewModel.alertModel.edge))
                         .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                         .cornerRadius(15, corners: [.topLeft, .topRight])
                         .onTapGesture {
@@ -37,10 +37,10 @@ struct AlertChoiceView: View {
                     }
                     .gesture(DragGesture()
                     .onChanged({ value in
-                        self.viewRouter.alertModel.offSet = (value.translation.height*0.1) + self.viewRouter.alertModel.offSet
+                        self.viewModel.alertModel.offSet = (value.translation.height*0.1) + self.viewModel.alertModel.offSet
                     })
                     )
-                        .offset(y: self.viewRouter.alertModel.offSet)
+                        .offset(y: self.viewModel.alertModel.offSet)
                 }
             }
         }
@@ -48,11 +48,11 @@ struct AlertChoiceView: View {
 
     func closeAnimation(_ geo: GeometryProxy) {
         withAnimation(.easeInOut(duration: 0.5)) {
-            self.viewRouter.alertModel.offSet = UIScreen.main.bounds.height
+            self.viewModel.alertModel.offSet = UIScreen.main.bounds.height
         }
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
-            self.viewRouter.alertModel.offSet = UIScreen.main.bounds.height/2
-            self.viewRouter.designModel.flg.toggle()
+            self.viewModel.alertModel.offSet = UIScreen.main.bounds.height/2
+            self.viewModel.designModel.flg.toggle()
         }
     }
 }

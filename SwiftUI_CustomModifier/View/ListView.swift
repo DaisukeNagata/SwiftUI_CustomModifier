@@ -12,23 +12,23 @@ struct ListView: View {
 
     var action: (_ index: Bool) -> Void
 
-    @ObservedObject var viewRouter: ViewModel
+    @ObservedObject var viewModel: ViewModel
 
     init(viewRouter: ViewModel, action: @escaping (Bool) -> Void) {
         self.action = action
-        self.viewRouter = viewRouter
+        self.viewModel = viewRouter
     }
 
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 List {
-                    ForEach(viewRouter.designModel.texIndex.indices, id: \.self) { v in
-                       Text(self.viewRouter.designModel.texIndex[v])
+                    ForEach(viewModel.designModel.texIndex.indices, id: \.self) { v in
+                       Text(self.viewModel.designModel.texIndex[v])
                             .frame(maxWidth: .infinity,alignment: .center)
                             .frame(height: 100)
                             .onTapGesture {
-                                self.viewRouter.designModel.texIndex.remove(at: v)
+                                self.viewModel.designModel.texIndex.remove(at: v)
                         }
                     }
                 }
@@ -44,7 +44,7 @@ struct ListView: View {
                     }
                 }
             }
-            self.viewRouter.isAnimating()
+            self.viewModel.isAnimating()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .edgesIgnoringSafeArea(.all)
         }

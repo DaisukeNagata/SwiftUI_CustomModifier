@@ -20,7 +20,7 @@ struct TabModifier: ViewModifier {
     ]
 
     let selection: Binding<Int>
-    var viewRouter: ViewModel
+    var viewModel: ViewModel
     var tag: Int
     
     func body(content: Content) -> some View {
@@ -35,9 +35,9 @@ struct TabModifier: ViewModifier {
                     .foregroundColor(self.fgColor())
                     .onTapGesture {
                         self.selection.wrappedValue = self.tag
-                        self.viewRouter.designModel.offsetFlg.toggle()
+                        self.viewModel.designModel.offsetFlg.toggle()
                         // this is Navigation on/off
-                        self.selection.wrappedValue == 1 ? self.viewRouter.naviModel.isHiddenFlg.toggle() : nil
+                        self.selection.wrappedValue == 1 ? self.viewModel.naviModel.isHiddenFlg.toggle() : nil
                 }
             }
         }
@@ -45,9 +45,9 @@ struct TabModifier: ViewModifier {
 
     private func fgColor() -> Color { return selection.wrappedValue == self.tag ? Color(UIColor.systemBlue) : Color(UIColor.systemGray) }
 
-    private func iconName() -> String { return selection.wrappedValue == self.tag ? icon[self.tag].name : viewRouter.designModel.heartView }
+    private func iconName() -> String { return selection.wrappedValue == self.tag ? icon[self.tag].name : viewModel.designModel.heartView }
 
-    private func offsetY(geo: GeometryProxy) -> CGFloat { if viewRouter.designModel.offsetFlg { return selection.wrappedValue == self.tag ? -geo.size.height : 0 }
+    private func offsetY(geo: GeometryProxy) -> CGFloat { if viewModel.designModel.offsetFlg { return selection.wrappedValue == self.tag ? -geo.size.height : 0 }
         return 0
     }
 }

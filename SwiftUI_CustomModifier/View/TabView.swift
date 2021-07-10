@@ -12,7 +12,7 @@ struct TabView: View {
     
     var geometry: GeometryProxy
     @Binding var selection: Int
-    @ObservedObject var viewRouter: ViewModel
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {
@@ -25,7 +25,7 @@ struct TabView: View {
             HStack {
                 ForEach(0..<4) { i in
                     self.tabBoarder(modi: TabModifier(selection:  self.$selection,
-                                                      viewRouter: self.viewRouter, tag: i+1),
+                                                      viewModel: self.viewModel, tag: i+1),
                                     lineWidth: 1,
                                     CGPoint(x: self.geometry.size.width/4,
                                             y: self.safeArea(self.geometry) ? -10 : -20),

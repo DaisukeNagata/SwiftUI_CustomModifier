@@ -12,15 +12,15 @@ struct NavigationModifier: ViewModifier {
 
     @State var tag : Int?
     @State var view: AnyView?
-    var viewRouter: ViewModel
+    var viewModel: ViewModel
 
     func body(content: Content) -> some View {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = viewRouter.designModel.backgroundextColor
-        appearance.titleTextAttributes = [.foregroundColor: viewRouter.designModel.titleTextTextColor]
-        appearance.largeTitleTextAttributes = [.foregroundColor: viewRouter.designModel.largeTitleTextColor]
+        appearance.backgroundColor = viewModel.designModel.backgroundextColor
+        appearance.titleTextAttributes = [.foregroundColor: viewModel.designModel.titleTextTextColor]
+        appearance.largeTitleTextAttributes = [.foregroundColor: viewModel.designModel.largeTitleTextColor]
 
-        if viewRouter.designModel.backgroundextColor == UIColor.clear {
+        if viewModel.designModel.backgroundextColor == UIColor.clear {
             UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
             UINavigationBar.appearance().shadowImage = UIImage()
         } else {
@@ -34,7 +34,7 @@ struct NavigationModifier: ViewModifier {
                     Text("")
                         .navigationBarItems(leading:
                             Button(action: {
-                                withAnimation { self.viewRouter.designModel.flg.toggle()}
+                                withAnimation { self.viewModel.designModel.flg.toggle()}
                             }) {
                                 SetDesgin(ima: Image(systemName: "person.crop.circle") )
                             }, trailing:
@@ -45,19 +45,19 @@ struct NavigationModifier: ViewModifier {
                                 SetDesgin(ima: Image(systemName: "arrow.right") )
                         }
                     )
-                    NavigationLink(destination: AnyView(ListView( viewRouter: self.viewRouter, action: { flg in
+                    NavigationLink(destination: AnyView(ListView( viewRouter: self.viewModel, action: { flg in
                             if flg {
                                 
-                                0 == self.viewRouter.designModel.texIndex.count % 2 ?
-                                    self.viewRouter.designModel.texIndex.append("Hello") :
-                                    self.viewRouter.designModel.texIndex.append("World")
+                                0 == self.viewModel.designModel.texIndex.count % 2 ?
+                                    self.viewModel.designModel.texIndex.append("Hello") :
+                                    self.viewModel.designModel.texIndex.append("World")
                             }
-                        self.viewRouter.reModel.spinner.isAnimating = flg
+                        self.viewModel.reModel.spinner.isAnimating = flg
                     })
                     ), tag: self.tag ?? 0, selection: $tag) {
                         EmptyView()
                     }
-                    .navigationBarTitle("\(self.viewRouter.designModel.titleText)", displayMode: viewRouter.naviModel.mode)
+                    .navigationBarTitle("\(self.viewModel.designModel.titleText)", displayMode: viewModel.naviModel.mode)
                 }
             }
             .navigationViewStyle(StackNavigationViewStyle())

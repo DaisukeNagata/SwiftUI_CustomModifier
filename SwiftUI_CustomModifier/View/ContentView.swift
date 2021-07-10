@@ -12,7 +12,7 @@ struct ContentView: View {
 
     @State private var selection: Int = 1
 
-    @ObservedObject private var viewRouter = ViewModel()
+    @ObservedObject private var viewModel = ViewModel()
     private var n : NavigationModifier?
     private var ob: CIImageObject
 
@@ -25,7 +25,7 @@ struct ContentView: View {
         
         self.ob.uIImage = UIImage(named: "image")
 
-        viewRouter.designModel = DesignModel(id: 0,
+        viewModel.designModel = DesignModel(id: 0,
                                              flg: false,
                                              offsetFlg: false,
                                              lineWidth: 0,
@@ -36,9 +36,9 @@ struct ContentView: View {
                                              largeTitleTextColor: UIColor.black,
                                              texIndex: ["Hello"])
 
-        self.n = NavigationModifier(view: AnyView(self), viewRouter: self.viewRouter)
+        self.n = NavigationModifier(view: AnyView(self), viewModel: self.viewModel)
 
-        self.viewRouter.naviModel.mode = .inline
+        self.viewModel.naviModel.mode = .inline
     }
 
     var body: some View {
@@ -46,14 +46,14 @@ struct ContentView: View {
             VStack {
                 ZStack {
 
-                    self.naviBoarder(modi: self.n ?? NavigationModifier(viewRouter: self.viewRouter),
+                    self.naviBoarder(modi: self.n ?? NavigationModifier(viewModel: self.viewModel),
                                      lineWidth: 2,
                                      CGPoint(x: 0,
-                                             y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                             y: self.viewModel.naviModel.mode == .inline ? 44 : 95),
                                      CGPoint(x: geometry.size.width,
-                                             y: self.viewRouter.naviModel.mode == .inline ? 44 : 95),
+                                             y: self.viewModel.naviModel.mode == .inline ? 44 : 95),
                                      Color.purple)
-                        .isHidden(self.viewRouter.naviModel.isHiddenFlg)
+                        .isHidden(self.viewModel.naviModel.isHiddenFlg)
                     
                     if self.selection == 2 {
                         BoarderLineView()
@@ -70,9 +70,9 @@ struct ContentView: View {
                     }
                 }
 
-                TabView(geometry: geometry, selection: self.$selection, viewRouter: self.viewRouter)
+                TabView(geometry: geometry, selection: self.$selection, viewModel: self.viewModel)
             }
-            self.modifier(AlertModifer(view:  AnyView(AlertChoiceView(viewRouter: self.viewRouter))))
+            self.modifier(AlertModifer(view:  AnyView(AlertChoiceView(viewModel: self.viewModel))))
         }
     }
 }
