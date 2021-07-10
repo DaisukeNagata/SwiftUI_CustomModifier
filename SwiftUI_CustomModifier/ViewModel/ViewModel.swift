@@ -1,5 +1,5 @@
 //
-//  ViewRouter.swift
+//  ViewModel..swift
 //  SwiftUI_CustomModifier
 //
 //  Created by 永田大祐 on 2020/04/03.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class ViewRouter: ObservableObject {
+class ViewModel: ObservableObject {
 
     @Published var alertModel = AlertModel(id:0,
                                            edge: Edge.bottom,

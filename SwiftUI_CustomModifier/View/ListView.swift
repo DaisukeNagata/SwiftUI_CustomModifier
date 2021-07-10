@@ -12,9 +12,9 @@ struct ListView: View {
 
     var action: (_ index: Bool) -> Void
 
-    @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewModel
 
-    init(viewRouter: ViewRouter, action: @escaping (Bool) -> Void) {
+    init(viewRouter: ViewModel, action: @escaping (Bool) -> Void) {
         self.action = action
         self.viewRouter = viewRouter
     }

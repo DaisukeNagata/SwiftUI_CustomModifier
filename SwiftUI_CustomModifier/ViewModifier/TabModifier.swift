@@ -20,7 +20,7 @@ struct TabModifier: ViewModifier {
     ]
 
     let selection: Binding<Int>
-    var viewRouter: ViewRouter
+    var viewRouter: ViewModel
     var tag: Int
     
     func body(content: Content) -> some View {

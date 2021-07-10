@@ -12,7 +12,7 @@ struct TabView: View {
     
     var geometry: GeometryProxy
     @Binding var selection: Int
-    @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewModel
     
     var body: some View {
         ZStack {

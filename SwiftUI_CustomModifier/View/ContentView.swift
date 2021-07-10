@@ -12,7 +12,7 @@ struct ContentView: View {
 
     @State private var selection: Int = 1
 
-    @ObservedObject private var viewRouter = ViewRouter()
+    @ObservedObject private var viewRouter = ViewModel()
     private var n : NavigationModifier?
     private var ob: CIImageObject
 

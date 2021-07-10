@@ -11,7 +11,7 @@ import SwiftUI
 struct AlertChoiceView: View {
 
     @State private var selection: Int = 1
-    @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewModel
 
     // 画面の閉じる判定
     var body: some View {
