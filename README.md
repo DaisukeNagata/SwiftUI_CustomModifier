@@ -29,9 +29,10 @@ this is Navigation on/off
  </p>
 
 <p align="center">
-<img src= "https://user-images.githubusercontent.com/16457165/81165869-b66ebe00-8fcd-11ea-84ac-c04d17baa9b7.gif" width="320" height="700">
+<img src= "https://user-images.githubusercontent.com/16457165/125178348-032bd580-e21f-11eb-80b6-0bc27207d99f.mov" width="320">
  </p>
  
+
 <p align="center">
 <img src= "https://user-images.githubusercontent.com/16457165/78512300-4a3a4800-77de-11ea-9df2-eaf56da0c67d.gif" width="800" height="500">
  </p>
