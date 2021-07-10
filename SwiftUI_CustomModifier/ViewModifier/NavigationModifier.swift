@@ -31,33 +31,36 @@ struct NavigationModifier: ViewModifier {
         return
             NavigationView {
                 VStack {
-                    Text("")
+                    Color.clear
                         .navigationBarItems(leading:
                             Button(action: {
-                                withAnimation { self.viewModel.designModel.flg.toggle()}
+                                withAnimation { viewModel.designModel.flg.toggle()}
                             }) {
                                 SetDesgin(ima: Image(systemName: "person.crop.circle") )
                             }, trailing:
 
                             Button(action: {
-                                self.tag = 1
+                                tag = 1
                             }) {
                                 SetDesgin(ima: Image(systemName: "arrow.right") )
                         }
                     )
                     NavigationLink(destination: AnyView(ListView( viewRouter: self.viewModel, action: { flg in
                             if flg {
-                                
-                                0 == self.viewModel.designModel.texIndex.count % 2 ?
-                                    self.viewModel.designModel.texIndex.append("Hello") :
-                                    self.viewModel.designModel.texIndex.append("World")
+                                // This is reload Time Example
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+                                    0 == viewModel.designModel.texIndex.count % 2 ?
+                                    viewModel.designModel.texIndex.append("Hello") :
+                                    viewModel.designModel.texIndex.append("World")
+                                    viewModel.action?()
+                                }
                             }
-                        self.viewModel.reModel.spinner.isAnimating = flg
+                            viewModel.reModel.spinner.isAnimating = flg
                     })
-                    ), tag: self.tag ?? 0, selection: $tag) {
+                    ), tag: tag ?? 0, selection: $tag) {
                         EmptyView()
                     }
-                    .navigationBarTitle("\(self.viewModel.designModel.titleText)", displayMode: viewModel.naviModel.mode)
+                    .navigationBarTitle("\(viewModel.designModel.titleText)", displayMode: viewModel.naviModel.mode)
                 }
             }
             .navigationViewStyle(StackNavigationViewStyle())

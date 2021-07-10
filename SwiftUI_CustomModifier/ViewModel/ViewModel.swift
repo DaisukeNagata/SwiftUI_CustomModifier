@@ -25,7 +25,7 @@ class ViewModel: ObservableObject {
                                              texIndex: ["Hello"])
     @Published var reModel = RefreshModel(id: 0)
     @Published var naviModel = NaviModel(id: 0)
-
+    @Published var action: (() -> Void)?
     func isAnimating() -> some View {
         _ = self.reModel.spinner.isAnimating ? self.reModel.spinner.hidden() : nil
         return  self.reModel.spinner

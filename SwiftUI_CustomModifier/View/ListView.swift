@@ -11,12 +11,13 @@ import SwiftUI
 struct ListView: View {
 
     var action: (_ index: Bool) -> Void
-
+    @State var flg = false
     @ObservedObject var viewModel: ViewModel
 
     init(viewRouter: ViewModel, action: @escaping (Bool) -> Void) {
         self.action = action
-        self.viewModel = viewRouter
+        viewModel = viewRouter
+        refreshBind()
     }
 
     var body: some View {
@@ -24,29 +25,34 @@ struct ListView: View {
             ZStack {
                 List {
                     ForEach(viewModel.designModel.texIndex.indices, id: \.self) { v in
-                       Text(self.viewModel.designModel.texIndex[v])
+                        Text(viewModel.designModel.texIndex[v])
                             .frame(maxWidth: .infinity,alignment: .center)
                             .frame(height: 100)
+                            .background(changeColor(v: v))
                             .onTapGesture {
-                                self.viewModel.designModel.texIndex.remove(at: v)
-                        }
+                                viewModel.designModel.texIndex.remove(at: v)
+                            }
                     }
                 }
                 .gesture(DragGesture()
                             .onChanged({ value in
-                                // Example
-                                self.action(true)
-                            }))
-                .onPreferenceChange(ScrollOffsetPreferenceKey.self) { key in
                     // Example
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.action(false)
-                    }
-                }
+                    self.action(true)
+                }))
             }
-            self.viewModel.isAnimating()
+            viewModel.isAnimating()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .edgesIgnoringSafeArea(.all)
+        }
+    }
+
+    func changeColor(v: Int) -> Color {
+        viewModel.designModel.texIndex[v] == "Hello" ? .green : .orange
+    }
+
+    func refreshBind() {
+        viewModel.action = {
+            viewModel.reModel.spinner.isAnimating = false
         }
     }
 }
