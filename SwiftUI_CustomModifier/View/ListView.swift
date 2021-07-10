@@ -37,7 +37,9 @@ struct ListView: View {
                 .gesture(DragGesture()
                             .onChanged({ value in
                     // Example
-                    self.action(true)
+                    if !viewModel.reModel.spinner.isAnimating {
+                        self.action(true)
+                    }
                 }))
             }
             viewModel.isAnimating()
