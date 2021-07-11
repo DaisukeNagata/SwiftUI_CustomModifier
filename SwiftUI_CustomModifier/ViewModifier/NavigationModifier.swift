@@ -47,6 +47,7 @@ struct NavigationModifier: ViewModifier {
                     )
                     NavigationLink(destination: AnyView(ListView( viewRouter: self.viewModel, action: { flg in
                             if flg {
+                                viewModel.reModel.spinner.isAnimating = flg
                                 // This is reload Time Example
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
                                     0 == viewModel.designModel.texIndex.count % 2 ?
@@ -55,7 +56,6 @@ struct NavigationModifier: ViewModifier {
                                     viewModel.action?()
                                 }
                             }
-                            viewModel.reModel.spinner.isAnimating = flg
                     })
                     ), tag: tag ?? 0, selection: $tag) {
                         EmptyView()
