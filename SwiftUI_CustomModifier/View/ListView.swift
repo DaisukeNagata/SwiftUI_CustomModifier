@@ -48,11 +48,11 @@ struct ListView: View {
         }
     }
 
-    func changeColor(v: Int) -> Color {
+    private func changeColor(v: Int) -> Color {
         viewModel.designModel.texIndex[v] == "Hello" ? .green : .orange
     }
 
-    func refreshBind() {
+    private func refreshBind() {
         viewModel.action = {
             viewModel.reModel.spinner.isAnimating = false
         }
