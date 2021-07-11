@@ -34,7 +34,7 @@ struct NavigationModifier: ViewModifier {
                     Color.clear
                         .navigationBarItems(leading:
                             Button(action: {
-                                withAnimation { viewModel.designModel.flg.toggle()}
+                                withAnimation {viewModel.designModel.flg.toggle()}
                             }) {
                                 SetDesgin(ima: Image(systemName: "person.crop.circle") )
                             }, trailing:
@@ -45,7 +45,7 @@ struct NavigationModifier: ViewModifier {
                                 SetDesgin(ima: Image(systemName: "arrow.right") )
                         }
                     )
-                    NavigationLink(destination: AnyView(ListView( viewRouter: self.viewModel, action: { flg in
+                    NavigationLink(destination: AnyView(ListView(viewModel: self.viewModel, action: { flg in
                             if flg {
                                 viewModel.reModel.spinner.isAnimating = flg
                                 // This is reload Time Example

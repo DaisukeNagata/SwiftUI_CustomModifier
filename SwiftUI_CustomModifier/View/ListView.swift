@@ -14,9 +14,9 @@ struct ListView: View {
     @State var flg = false
     @ObservedObject var viewModel: ViewModel
 
-    init(viewRouter: ViewModel, action: @escaping (Bool) -> Void) {
+    init(viewModel: ViewModel, action: @escaping (Bool) -> Void) {
         self.action = action
-        viewModel = viewRouter
+        self.viewModel = viewModel
         refreshBind()
     }
 
